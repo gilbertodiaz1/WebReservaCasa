@@ -9,3 +9,11 @@
 .icon-block {
   padding: 0 15px;
 }
+
+.slider-600{
+	height: 600px;
+}
+
+.slider-600 ul.slides-600{
+	height: 560px;
+}

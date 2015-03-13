@@ -2514,6 +2514,10 @@ span.badge {
 .right {
   float: right !important; }
 
+.justify{
+  text-align: justify;
+}
+
 .no-select, input[type=range], input[type=range] + .thumb {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
