@@ -29,38 +29,55 @@
 </nav>
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-  <div class="row">
-    <div class="col offset-l5">
-      <h1>Contacto</h1>
+    <div class="row">
+      <div class="col l12 center">
+        <h1>Contact</h1>
+      </div>
     </div>
   </div>
 </div>
-</div>
 <div class="container">
   <div class="section">
-    <!--   Icon Section   -->
     <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-amber-text"><i class="mdi-image-flash-on"></i></h2>
-          <h5 class="center">Lorem ipsum dolor.</h5>
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio in, dolorum error necessitatibus repellendus maxime!</p>
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="mdi-action-account-circle prefix"></i>
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">Name</label>
+          </div>
         </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-amber-text"><i class="mdi-social-group"></i></h2>
-          <h5 class="center">Lorem ipsum dolor sit.</h5>
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam eaque, saepe vitae expedita, sint provident similique blanditiis ipsam! Quos veritatis quas nulla illum, sapiente?</p>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+          </div>
         </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center light-amber-text"><i class="mdi-action-settings"></i></h2>
-          <h5 class="center">Lorem ipsum.</h5>
-          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti esse quisquam neque provident architecto quo cupiditate itaque, rerum laborum dicta.</p>
+        <div class="row">
+          <div class="col s6">
+            <label>Select</label>
+            <select class="browser-default">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Reserved</option>
+              <option value="2">Information</option>
+            </select>
+          </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="mdi-editor-mode-edit prefix"></i>
+            <textarea id="textarea1" class="materialize-textarea" rows="50"></textarea>
+            <label for="textarea1">Message</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <br><br>
@@ -88,8 +105,8 @@
   <div class="footer-copyright amber darken-2">
     <div class="container">
      © 2015 Copyright <a class="white-text" href="#">IUCoding</a>
-    </div>
-  </div>
+   </div>
+ </div>
 </footer>
 <!--  Scripts-->
 <script src="js/jquery-1.11.1.min.js"></script>
