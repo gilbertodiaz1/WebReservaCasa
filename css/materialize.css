@@ -2538,8 +2538,9 @@ a {
 
 /* line 37, C:/xampp/htdocs/WebReservaCasa/css/sass/components/global */
 .valign-wrapper {
-  display: -ms-flexbox;
   display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-flex-align: center;
   -ms-flex-align: center;
@@ -7017,16 +7018,18 @@ small {
   font-size: 1.1rem;
   font-weight: 300;
   color: #fff;
-  display: -ms-flexbox;
   display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
   -webkit-flex-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
-      justify-content: space-between; }
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between; }
   /* line 44, C:/xampp/htdocs/WebReservaCasa/css/sass/components/toast */
   .toast .btn, .toast .btn-large, .toast .btn-flat {
     margin: 0;
