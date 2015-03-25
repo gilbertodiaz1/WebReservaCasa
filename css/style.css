@@ -5,15 +5,14 @@
  *
  * Made By MaterializeCSS.com
  */
-
+/* line 9, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
 .icon-block {
-  padding: 0 15px;
-}
+  padding: 0 15px; }
 
-.slider-600{
-	height: 600px;
-}
+/* line 13, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.slider-600 {
+  height: 600px; }
 
-.slider-600 ul.slides-600{
-	height: 560px;
-}
+/* line 17, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.slider-600 ul.slides-600 {
+  height: 560px; }

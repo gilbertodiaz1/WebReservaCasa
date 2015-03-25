@@ -1,0 +1,238 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("flaticon.eot");
+	src: url("flaticon.eot#iefix") format("embedded-opentype"),
+	url("flaticon.woff") format("woff"),
+	url("flaticon.ttf") format("truetype"),
+	url("flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}.flaticon-add182:before {
+	content: "\e000";
+}
+.flaticon-alarm52:before {
+	content: "\e001";
+}
+.flaticon-animals-allowed:before {
+	content: "\e002";
+}
+.flaticon-bag30:before {
+	content: "\e003";
+}
+.flaticon-basic14:before {
+	content: "\e004";
+}
+.flaticon-basic16:before {
+	content: "\e005";
+}
+.flaticon-basic17:before {
+	content: "\e006";
+}
+.flaticon-bathroom24:before {
+	content: "\e007";
+}
+.flaticon-bed33:before {
+	content: "\e008";
+}
+.flaticon-beds:before {
+	content: "\e009";
+}
+.flaticon-camera102:before {
+	content: "\e00a";
+}
+.flaticon-cancel19:before {
+	content: "\e00b";
+}
+.flaticon-check52:before {
+	content: "\e00c";
+}
+.flaticon-circle108:before {
+	content: "\e00d";
+}
+.flaticon-clock100:before {
+	content: "\e00e";
+}
+.flaticon-close47:before {
+	content: "\e00f";
+}
+.flaticon-coconut8:before {
+	content: "\e010";
+}
+.flaticon-compass67:before {
+	content: "\e011";
+}
+.flaticon-credit70:before {
+	content: "\e012";
+}
+.flaticon-cup53:before {
+	content: "\e013";
+}
+.flaticon-delete85:before {
+	content: "\e014";
+}
+.flaticon-dollar178:before {
+	content: "\e015";
+}
+.flaticon-dont-disturb:before {
+	content: "\e016";
+}
+.flaticon-door24:before {
+	content: "\e017";
+}
+.flaticon-download168:before {
+	content: "\e018";
+}
+.flaticon-earth186:before {
+	content: "\e019";
+}
+.flaticon-expand42:before {
+	content: "\e01a";
+}
+.flaticon-eye106:before {
+	content: "\e01b";
+}
+.flaticon-favorite21:before {
+	content: "\e01c";
+}
+.flaticon-hanger24:before {
+	content: "\e01d";
+}
+.flaticon-heart297:before {
+	content: "\e01e";
+}
+.flaticon-history6:before {
+	content: "\e01f";
+}
+.flaticon-home153:before {
+	content: "\e020";
+}
+.flaticon-hotel77:before {
+	content: "\e021";
+}
+.flaticon-house-things:before {
+	content: "\e022";
+}
+.flaticon-keyboard53:before {
+	content: "\e023";
+}
+.flaticon-left224:before {
+	content: "\e024";
+}
+.flaticon-location44:before {
+	content: "\e025";
+}
+.flaticon-mail80:before {
+	content: "\e026";
+}
+.flaticon-mark1:before {
+	content: "\e027";
+}
+.flaticon-menu55:before {
+	content: "\e028";
+}
+.flaticon-motel:before {
+	content: "\e029";
+}
+.flaticon-navigation12:before {
+	content: "\e02a";
+}
+.flaticon-paypal10:before {
+	content: "\e02b";
+}
+.flaticon-paypal11:before {
+	content: "\e02c";
+}
+.flaticon-pets20:before {
+	content: "\e02d";
+}
+.flaticon-photo147:before {
+	content: "\e02e";
+}
+.flaticon-place4:before {
+	content: "\e02f";
+}
+.flaticon-plane15:before {
+	content: "\e030";
+}
+.flaticon-refresh62:before {
+	content: "\e031";
+}
+.flaticon-rounded54:before {
+	content: "\e032";
+}
+.flaticon-safety9:before {
+	content: "\e033";
+}
+.flaticon-settings49:before {
+	content: "\e034";
+}
+.flaticon-shopping232:before {
+	content: "\e035";
+}
+.flaticon-shower14:before {
+	content: "\e036";
+}
+.flaticon-smartphone24:before {
+	content: "\e037";
+}
+.flaticon-sport21:before {
+	content: "\e038";
+}
+.flaticon-star174:before {
+	content: "\e039";
+}
+.flaticon-stars10:before {
+	content: "\e03a";
+}
+.flaticon-suitcase47:before {
+	content: "\e03b";
+}
+.flaticon-suitcase48:before {
+	content: "\e03c";
+}
+.flaticon-sun70:before {
+	content: "\e03d";
+}
+.flaticon-swim2:before {
+	content: "\e03e";
+}
+.flaticon-taxi14:before {
+	content: "\e03f";
+}
+.flaticon-tick7:before {
+	content: "\e040";
+}
+.flaticon-tv29:before {
+	content: "\e041";
+}
+.flaticon-user157:before {
+	content: "\e042";
+}
+.flaticon-visibility1:before {
+	content: "\e043";
+}
+.flaticon-wallet17:before {
+	content: "\e044";
+}
+.flaticon-warning39:before {
+	content: "\e045";
+}
+.flaticon-wifi-signal:before {
+	content: "\e046";
+}
+.flaticon-wrench73:before {
+	content: "\e047";
+}
+.flaticon-zoom71:before {
+	content: "\e048";
+}
+.flaticon-zoom72:before {
+	content: "\e049";
+}
