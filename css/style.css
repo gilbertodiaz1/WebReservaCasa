@@ -1,18 +1,29 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-/* line 9, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+/* line 8, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
 .icon-block {
   padding: 0 15px; }
 
-/* line 13, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+/* line 12, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
 .slider-600 {
-  height: 600px; }
+  height: 700px; }
 
-/* line 17, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+/* line 16, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
 .slider-600 ul.slides-600 {
-  height: 560px; }
+  height: 700px; }
+
+/* line 20, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.indicators {
+  top: 102%; }
+
+/* line 24, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.flexbox {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/* line 28, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.flexbox-center {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
