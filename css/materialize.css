@@ -9323,7 +9323,7 @@ ul.side-nav .collapsible-body li.active, ul.side-nav.fixed .collapsible-body li.
  */
 /* line 32, C:/xampp/htdocs/WebReservaCasa/css/sass/components/date_picker/default.date.scss */
 .picker__select--month, .picker__select--year {
-  height: 2em;
+  height: 2.5em;
   padding: 0.5em;
   margin-left: 0.25em;
   margin-right: 0.25em; }
@@ -9344,7 +9344,7 @@ ul.side-nav .collapsible-body li.active, ul.side-nav.fixed .collapsible-body li.
 .picker__select--year.browser-default {
   display: inline;
   background-color: #FFFFFF;
-  width: 25%; }
+  width: 30%; }
 
 /* line 60, C:/xampp/htdocs/WebReservaCasa/css/sass/components/date_picker/default.date.scss */
 .picker__select--month:focus, .picker__select--year:focus {
