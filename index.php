@@ -183,9 +183,86 @@
         </div>
       </div>
     </div>
-    <br><br>
+
     <div class="section">
+    <h3>Carateristicas</h3>
+    <br>
       <div class="row">
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-maps-my-location"></i>
+            <h5 class="promo-caption">Ubicacion</h5>
+            <ul class="">
+              <li>País: Aruba</li>
+              <li>Zona residencial: Gold Coast</li>
+              <li>Casa: Diamante 63</li>
+          </ul>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-action-home"></i>
+            <h5 class="promo-caption">Casa Townhouse</h5>
+            <p>Townhouses de dos pisos con dos cuartos, tres baños, sala, cocina, comedor, lavanderia y patio.</p>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-maps-local-hotel"></i>
+            <h5 class="promo-caption">Comodidades</h5>
+            <ul class="">
+              <li>Aire Acondicionado.</li>
+              <li>Utencilios de cocina.</li>
+              <li>Toallas</li>
+              <li>Almohadas, sabanas y cobertores.</li>
+              <li>Internet</li>
+              <li>Tv por Cable</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-maps-local-attraction"></i>
+            <h5 class="promo-caption">Disfrute</h5>
+            <p>Pisina principal y parrilleras principales dentro del mismo Conjunto Residencial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-notification-dnd-forwardslash"></i>
+            <h5 class="promo-caption">Prohibido fumar dentro de la casa.</h5>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-social-group"></i>
+            <h5 class="promo-caption">Maximo 5 Personas</h5>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-maps-local-grocery-store"></i>
+            <h5 class="promo-caption">Formas de pago</h5>
+            <ul class="">
+              <li>Transferencia.</li>
+              <li>PayPal.</li>
+              <li>Tarjeta de credito.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col s12 m3">
+          <div class="center promo">
+            <i class="medium mdi-maps-store-mall-directory"></i>
+            <h5 class="promo-caption">Datos Adicionales</h5>
+            <ul>
+              <li>Playa a 5 minutos en carro y 12-15 minutos a pie.</li>
+              <li>Cerca de las zonas hoteleras, restaurantes, centro de compras y clubs nocturnos.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
