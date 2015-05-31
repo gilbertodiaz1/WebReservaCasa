@@ -6,10 +6,10 @@ require("include/class.smtp.php");
 	$mail->IsSMTP();
 	$mail->SMTPAuth = true;
 	$mail->SMTPSecure = "tls";
-	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 587;
-	$mail->Username = "jose.gilbertopinto@gmail.com";
-	$mail->Password = "gilberto.7";
+	$mail->Host = "mail.rent-in-aruba.com";
+	$mail->Port = 25;
+	$mail->Username = "reservation@rent-in-aruba.com";
+	$mail->Password = "Aruba.15";
 	$mail->CharSet = "UTF-8";
 
 	$nombre = $_POST['first_name'];
@@ -17,7 +17,7 @@ require("include/class.smtp.php");
 	$people = $_POST['people'];
 	$checkin = $_POST['checkin'];
 	$checkout = $_POST['checkout'];
-	$dest = "jose.gilbertopinto@gmail.com";
+	$dest = "reservation@rent-in-aruba.com";
 	$email = $_POST['email'];
 	$asunto = 'Solicitud de reservación';
 	$cuerpo = "Nombre: $nombre\n E-Mail: $email\n Teléfono: $phone\n Cantidad de Personas: $people\n Fecha de inicio: $checkin\n Fecha de fin: $checkout\n";
@@ -265,7 +265,7 @@ require("include/class.smtp.php");
 	$mail->Subject = $asunto;
 	$mail->AltBody = "";
 	$mail->MsgHTML($cuerpo);
-	$mail->AddAddress("jose.gilbertopinto@gmail.com", "Jose Gilberto Pinto");
+	$mail->AddAddress("reservation@rent-in-aruba.com", "Reserva");
 	$mail->IsHTML(true);
 
 	if(!$mail->send()) {

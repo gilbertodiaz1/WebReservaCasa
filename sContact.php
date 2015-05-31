@@ -6,10 +6,10 @@ require("include/class.smtp.php");
 	$mail->IsSMTP();
 	$mail->SMTPAuth = true;
 	$mail->SMTPSecure = "tls";
-	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 587;
-	$mail->Username = "jose.gilbertopinto@gmail.com";
-	$mail->Password = "gilberto.7";
+	$mail->Host = "mail.rent-in-aruba.com";
+	$mail->Port = 25;
+	$mail->Username = "info@rent-in-aruba.com";
+	$mail->Password = "Aruba.15";
 	$mail->CharSet = "UTF-8";
 
 	$nombre = $_POST['first_name'];
@@ -242,7 +242,7 @@ require("include/class.smtp.php");
 	$mail->Subject = $asunto;
 	$mail->AltBody = "";
 	$mail->MsgHTML($cuerpo);
-	$mail->AddAddress("jose.gilbertopinto@gmail.com", "Jose Gilberto Pinto");
+	$mail->AddAddress("info@rent-in-aruba.com", "Info");
 	$mail->IsHTML(true);
 
 	if(!$mail->send()) {

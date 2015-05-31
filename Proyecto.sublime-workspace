@@ -180,10 +180,10 @@
 			}
 		},
 		{
-			"contents": "Aruba.15",
+			"contents": "Aruba.15\n\n\nConfiguración no SSL\n(NO recomendado)\nNombre de usuario:	reservation@rent-in-aruba.com\nContraseña:	Usa la contraseña de la cuenta de correo electrónico.\nServidor entrante:	mail.rent-in-aruba.com\nIMAP Port: 143\nPOP3 Port: 110\nOutgoing Server:	mail.rent-in-aruba.com\nSMTP Port: 25\nSe requiere autenticación para IMAP, POP3 y SMTP.\n\n\nConfiguración SSL/TLS segura\n(recomendado)\nNombre de usuario:	reservation@rent-in-aruba.com\nContraseña:	Usa la contraseña de la cuenta de correo electrónico.\nServidor entrante:	a2plcpnl0179.prod.iad2.secureserver.net\nIMAP Port: 993\nPOP3 Port: 995\nOutgoing Server:	a2plcpnl0179.prod.iad2.secureserver.net\nSMTP Port: 465\nSe requiere autenticación para IMAP, POP3 y SMTP.",
 			"settings":
 			{
-				"buffer_size": 8,
+				"buffer_size": 710,
 				"line_ending": "Windows",
 				"name": "Aruba.15"
 			}
@@ -594,15 +594,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8,
+						"buffer_size": 710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8,
-								0
+								183,
+								205
 							]
 						],
 						"settings":

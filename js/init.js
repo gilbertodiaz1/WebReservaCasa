@@ -53,7 +53,7 @@ $('.datepicker').pickadate({
             var datos = 'first_name='+ nombre + '&email=' + email + '&phone=' + phone + '&checkin=' + checkin + '&checkout=' + checkout + '&people=' + people;
             $.ajax({
                 type: "POST",
-                url: "SReserva.php",
+                url: "/sReserva.php",
                 data: datos,
                 success: function() {
                     // $('.ajaxgif').hide();
@@ -98,7 +98,7 @@ $('.datepicker').pickadate({
             var datos2 = 'first_name='+ nombre2 + '&email=' + email2 + '&subject=' + subject2 + '&message=' + message2;
             $.ajax({
                 type: "POST",
-                url: "sContact.php",
+                url: "/sContact.php",
                 data: datos2,
                 success: function() {
                     // $('.ajaxgif').hide();
