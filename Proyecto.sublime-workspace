@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"line",
+				"line-height: 〔property〕"
+			],
+			[
+				"go",
+				"gold	 materialize.min.css"
+			],
+			[
+				"whi",
+				"white-text	 materialize.min.css"
+			],
+			[
+				"mar",
+				"margin	(style.css)"
+			],
+			[
+				"text-dar",
+				"text-darken-1	 materialize.min.css"
+			],
+			[
+				"fonts-",
+				"font-size: 〔property〕"
+			],
+			[
+				"fon",
+				"font	(style.css)"
+			],
+			[
+				"padding",
+				"padding-right: 〔property〕"
+			],
+			[
+				"pa",
+				"padding	(style.css)"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"chek",
+				"check_in"
+			],
+			[
 				"m-",
 				"m-card	Materialize basic card"
 			],
@@ -160,55 +208,51 @@
 	"buffers":
 	[
 		{
-			"contents": "8671841",
+			"file": "/C/xampp/htdocs/admin/includes/conf.class.php",
 			"settings":
 			{
-				"buffer_size": 7,
-				"line_ending": "Windows",
-				"name": "8671841"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/index.html",
-			"settings":
-			{
-				"buffer_size": 8291,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/fonts/sfotipy.svg",
-			"settings":
-			{
-				"buffer_size": 11920,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/estilos.styl",
-			"settings":
-			{
-				"buffer_size": 3962,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<?php\n	error_reporting(E_ALL ^ E_NOTICE);\n	//EDIT ONLY FOLLOWING 5 LINES\n	$db_host = 'localhost'; //hostname\n	$db_user = 'denisus'; // username\n	$db_password = 'deonis_16'; // password\n	$db_name = 'booking_cc'; //database name\n	$baseDir = '/'; // Don't change this variable if you will be using booking in the ROOT of the username.\n	// otherwise - change to $baseDir = \"/directoryName/\"; WITH TRAILING SLASH!\n	\n	$demo=false;\n	\n	if(!empty($db_host) && !empty($db_user) && !empty($db_password) && !empty($db_name)){\n		$link = mysql_connect($db_host, $db_user, $db_password) or die(\"1. Open dbconnect.php and edit mysql variables. <br/> 2. Run install.php \");\n		@mysql_select_db($db_name);\n	 	mysql_query(\"SET NAMES utf8\") or die(\"err: \" . mysql_error());\n	} else { echo \"Application not installed! <a href='install.php'>Click here</a> to proceed with installation.\"; exit(); }\n?>",
-			"file": "/C/xampp/htdocs/booking2/includes/dbconnect.php",
-			"file_size": 979,
-			"file_write_time": 130331927280000000,
-			"settings":
-			{
-				"buffer_size": 877,
+				"buffer_size": 12234,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/fonts.styl",
+			"file": "/C/xampp/htdocs/admin/booking-search.php",
 			"settings":
 			{
-				"buffer_size": 1425,
+				"buffer_size": 17388,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/b1/includes/details.class.php",
+			"settings":
+			{
+				"buffer_size": 12793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/admin/includes/search.class.php",
+			"settings":
+			{
+				"buffer_size": 16853,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/admin/index.php",
+			"settings":
+			{
+				"buffer_size": 4416,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/xampp/htdocs/admin/js/init.js",
+			"settings":
+			{
+				"buffer_size": 1703,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -226,6 +270,26 @@
 			[
 				"ins",
 				"Package Control: Install Package"
+			],
+			[
+				"formar",
+				"CodeFormatter: Format as PHP Syntax"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"forma",
+				"Format CSS: Expanded"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
 			],
 			[
 				"remove",
@@ -298,13 +362,9 @@
 			[
 				"pack",
 				"Package Control: List Packages"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 414.0
+		"width": 510.0
 	},
 	"console":
 	{
@@ -325,17 +385,45 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/WebReservaCasa",
-		"/C/xampp/htdocs/WebReservaCasa/css",
-		"/C/xampp/htdocs/WebReservaCasa/css/sass"
+		"/C/xampp/htdocs/b1",
+		"/C/xampp/htdocs/b1/includes",
+		"/C/xampp/htdocs/b1/languages"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/WebReservaCasa/home.php",
+		"/C/xampp/htdocs/admin/css/style.css",
+		"/C/xampp/htdocs/admin/languages/espanol.php",
+		"/C/xampp/htdocs/b1/index.php",
+		"/C/xampp/htdocs/admin/index.php",
+		"/C/xampp/htdocs/admin/cp/block_room.php",
+		"/C/xampp/htdocs/admin/cp/roomsearch.php",
+		"/C/xampp/htdocs/admin/install/install.class.php",
+		"/C/xampp/htdocs/admin/js/hotelvalidation.js",
+		"/C/xampp/htdocs/admin/calendar.php",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/phpcbf.sublime-settings",
+		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/phpcbf/phpcbf.sublime-settings",
+		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/phpcbf/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/admin/js/date_picker/picker.date.js",
+		"/C/xampp/htdocs/admin/css/sass/components/_variables.scss",
+		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_color.scss",
+		"/C/xampp/htdocs/admin/js/materialize.js",
+		"/C/xampp/htdocs/admin/css/flexslider.css",
+		"/C/xampp/htdocs/admin/js/jquery.min.js",
+		"/C/xampp/htdocs/WebReservaCasa/home.html",
+		"/C/xampp/htdocs/admin/css/style.min.css",
+		"/C/xampp/htdocs/admin/css/bootstrap.css",
+		"/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/fonts.styl",
+		"/C/xampp/htdocs/booking2/includes/dbconnect.php",
+		"/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/estilos.styl",
+		"/C/Users/Gilberto/Desktop/sfotipy-master/templates/fonts/sfotipy.svg",
+		"/C/Users/Gilberto/Desktop/sfotipy-master/templates/index.html",
+		"/C/Users/Gilberto/Desktop/8671841",
 		"/C/xampp/htdocs/WebReservaCasa/gallery.html",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/L/Juegos/LEGO Jurassic World/steam_api.ini",
-		"/C/xampp/htdocs/WebReservaCasa/home.html",
 		"/C/xampp/htdocs/WebReservaCasa/contact.html",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/style.scss",
 		"/C/xampp/htdocs/WebReservaCasa/index.html",
@@ -364,11 +452,9 @@
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/date_picker/_default.date.scss",
 		"/C/xampp/htdocs/WebReservaCasa/js/materialize.js",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_global.scss",
-		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/xampp/htdocs/WebReservaCasa/css/style.min.css",
 		"/C/xampp/htdocs/WebReservaCasa/css/style.css",
 		"/C/xampp/htdocs/WebReservaCasa/css/materialize.css",
-		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_color.scss",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_variables.scss",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_waves.scss",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_navbar.scss",
@@ -436,13 +522,16 @@
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 78.0
 	},
 	"find_in_files":
 	{
-		"height": 98.0,
+		"height": 197.0,
 		"where_history":
 		[
+			"C:\\xampp\\htdocs\\admin",
+			"C:\\xampp\\htdocs\\admin\\css\\sass\\components",
+			"C:\\xampp\\htdocs\\admin",
 			"C:\\xampp\\htdocs\\WebReservaCasa\\css\\sass\\components",
 			"C:\\xampp\\htdocs\\WebReservaCasa\\css\\sass\\components\\date_picker",
 			"C:\\xampp\\htdocs\\WebReservaCasa\\css\\sass\\components"
@@ -453,6 +542,86 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"span",
+			"flex",
+			"setMyParamValue",
+			"Seleccione el número de habitación",
+			"room",
+			"TIME_ZONE_MISMATCH",
+			"mysqlCheckInDate",
+			"sv_mcheckindate",
+			"getMySqlDate",
+			"mysqlCheckInDate",
+			"child_per_room",
+			"sv_childcount",
+			"child_per_room",
+			"SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT",
+			"checkin_date",
+			"check",
+			"setMySessionVars",
+			"loadMultiCapacity",
+			"SUCCESS",
+			"SEARCH_CODE",
+			"checkSearchEngine",
+			"TIME_ZONE_MISMATCH",
+			"tempdate",
+			"gotSearchResult",
+			"OUT_BEFORE_IN",
+			"intval",
+			"conf_booking_turn_off",
+			"SEARCH_ENGINE_TURN_OFF",
+			"SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT",
+			"Seleccione ",
+			"SEARCH_ENGINE_TURN_OFF",
+			"searchCode",
+			"check_in",
+			"mySlides",
+			"mySlides_",
+			"body-div",
+			"                                   \nody-div",
+			"room_result",
+			"get_currency_combo2",
+			"chld_row2",
+			"child_flag",
+			"currentrow",
+			"loadRoomTypes",
+			"child_flag",
+			"child_flag ",
+			"room_result",
+			"getAvailableRooms",
+			"conf_currency_symbol",
+			"conf_currency_symbol ",
+			"search-details",
+			"getBSIConfig",
+			"bsiHotelCore",
+			"img",
+			"collection-item",
+			"collection",
+			"mdi-",
+			"material-design-icons",
+			"info_outline",
+			"maxLimitObject",
+			"max",
+			"date",
+			"true",
+			"disabled",
+			"true",
+			"+ 1",
+			"create",
+			"min",
+			"calendar",
+			"createDate",
+			"date",
+			"disabled",
+			"date",
+			"disabled",
+			"month",
+			"min",
+			"settings",
+			"min",
+			"PickerConstructor",
+			"min",
+			"yellowStep",
 			".php",
 			"contact.html",
 			"validate",
@@ -500,10 +669,7 @@
 			"center",
 			".center",
 			"center",
-			"justify",
-			"brown",
-			" ",
-			"80"
+			"justify"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -522,45 +688,16 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "/C/xampp/htdocs/admin/includes/conf.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7,
-								7
-							]
-						],
-						"settings":
-						{
-							"auto_name": "8671841",
-							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8291,
+						"buffer_size": 12234,
 						"regions":
 						{
 						},
@@ -573,6 +710,7 @@
 						],
 						"settings":
 						{
+							"auto_complete": false,
 							"auto_complete_triggers":
 							[
 								{
@@ -584,47 +722,10 @@
 									"selector": "text.html"
 								}
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/fonts/sfotipy.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11920,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9433,
-								6733
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/XML/XML.tmLanguage"
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -634,49 +735,64 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/estilos.styl",
+					"buffer": 1,
+					"file": "/C/xampp/htdocs/admin/booking-search.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3962,
+						"buffer_size": 17388,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1072,
-								1072
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
 							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-							"syntax": "Packages/Stylus/Stylus.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/C/xampp/htdocs/booking2/includes/dbconnect.php",
+					"buffer": 2,
+					"file": "/C/xampp/htdocs/b1/includes/details.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 877,
+						"buffer_size": 12793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								877,
-								877
+								1581,
+								1581
 							]
 						],
 						"settings":
@@ -694,43 +810,141 @@
 								}
 							],
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3575.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/C/Users/Gilberto/Desktop/sfotipy-master/templates/stylus/fonts.styl",
+					"buffer": 3,
+					"file": "/C/xampp/htdocs/admin/includes/search.class.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1425,
+						"buffer_size": 16853,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								673,
-								673
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
 							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-							"syntax": "Packages/Stylus/Stylus.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 468.0,
+						"translation.x": 0.0,
+						"translation.y": 1958.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/xampp/htdocs/admin/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4006,
+								4006
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 946.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/xampp/htdocs/admin/js/init.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								254
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

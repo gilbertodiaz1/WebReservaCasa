@@ -1,1 +1,31 @@
-.icon-block{padding:0 15px}.slider-600{height:500px}.slider-600 ul.slides-600{height:500px}.indicators{top:102%}.flexbox{display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex}.flexbox-center{-ms-flex-pack:center;-webkit-justify-content:center;-moz-justify-content:center;justify-content:center}
+/* line 8, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.icon-block {
+  padding: 0 15px; }
+
+/* line 12, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.slider-600 {
+  height: 500px; }
+
+/* line 16, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.slider-600 ul.slides-600 {
+  height: 500px; }
+
+/* line 20, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.indicators {
+  top: 102%; }
+
+/* line 24, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.flexbox {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex; }
+
+/* line 28, C:/xampp/htdocs/WebReservaCasa/css/sass/style.scss */
+.flexbox-center {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -webkit-box-pack: center;
+          justify-content: center; }
