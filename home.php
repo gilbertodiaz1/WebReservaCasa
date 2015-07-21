@@ -136,7 +136,7 @@
                     <h4>Reservaci&#243;n en linea</h4>
                 </div>
                 <div class="row">
-                    <iframe style="width: 100%;height: 600px;border: 0;" src="http://localhost:8000/webreservacasa/cliente/index.php">
+                    <iframe style="width: 100%;height: 600px;border: 0;" src="http://localhost:8080/webreservacasa/cliente/index.php">
                         <p>Your browser does not support iframes.</p>
                     </iframe>
                 </div>

@@ -10,5 +10,12 @@
 		{
 			"path": "C:\\xampp\\htdocs\\b1"
 		}
-	]
+	],
+    "settings": {
+        "xdebug": {
+            "url": "http://localhost:8080/webreservacasa/",
+            "super_globals": true,
+            "close_on_stop": true
+        }
+    }
 }

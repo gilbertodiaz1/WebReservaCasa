@@ -14,9 +14,10 @@ class paypal_class {
    function paypal_class() {
        
       // initialization constructor.  Called when class is created.
-      
-      $this->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';
-      
+
+      //$this->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';
+      $this->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+
       $this->last_error = '';
       
       $this->ipn_log_file = '.ipn_results.log';
@@ -52,7 +53,7 @@ class paypal_class {
       // The user will briefly see a message on the screen that reads:
       // "Please wait, your order is being processed..." and then immediately
       // is redirected to paypal.
-       echo "<html>\n";
+      echo "<html>\n";
       echo "<head><title>Processing Payment...</title></head>\n";
       echo "<body onLoad=\"document.form.submit();\">\n";
       echo "<center><h3>Please wait, your order is being processed...</h3></center>\n";

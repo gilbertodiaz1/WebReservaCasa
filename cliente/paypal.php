@@ -16,9 +16,9 @@ $invoice = time();
 
 $p = new paypal_class;             // initiate an instance of the class
 
-//$p->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';   // testing paypal url
+$p->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';   // testing paypal url
 
-$p->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';     // paypal url
+//$p->paypal_url = 'https://www.paypal.com/cgi-bin/webscr';     // paypal url
 
             
 
