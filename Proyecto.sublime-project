@@ -2,20 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "."
-		},
-		{
-			"path": "C:\\xampp\\htdocs\\admin"
-		},
-		{
-			"path": "C:\\xampp\\htdocs\\b1"
+			"path": "C:\\Users\\Gilberto\\Desktop\\Log"
 		}
 	],
-    "settings": {
-        "xdebug": {
-            "url": "http://localhost:8080/webreservacasa/",
-            "super_globals": true,
-            "close_on_stop": true
-        }
-    }
+	"settings":
+	{
+		"xdebug":
+		{
+			"close_on_stop": true,
+			"super_globals": true,
+			"url": "http://localhost:8080/webreservacasa/"
+		}
+	}
 }

@@ -5,6 +5,10 @@
 * @copyright BestSoft Inc.
 * See COPYRIGHT.php for copyright notices and details.
 */
+
+require_once ("logs.php");
+require_once ("Nlogs.php");
+
 class BookingProcess
 {
 	private $guestsPerRoom		= 0;
@@ -57,7 +61,7 @@ class BookingProcess
 		$this->setMyParamValue($this->reservationdata, 'SESSION', 'dvars_details', NULL, true);						
 		$this->setMyParamValue($this->pricedata, 'SESSION', 'dvars_roomprices', NULL, true);		
 				
-		$this->setMyParamValue($this->clientdata['title'], 'POST', 'title', true); 
+		$this->setMyParamValue($this->clientdata['title'], 'POST', 'title', false);
 		$this->setMyParamValue($this->clientdata['fname'], 'POST', 'fname', '', true);
 		$this->setMyParamValue($this->clientdata['lname'], 'POST', 'lname', '', true);
 		$this->setMyParamValue($this->clientdata['address'], 'POST', 'str_addr', '', true);
@@ -68,8 +72,8 @@ class BookingProcess
 		$this->setMyParamValue($this->clientdata['phone'], 'POST', 'phone', '', true);
 		$this->setMyParamValue($this->clientdata['fax'], 'POST', 'fax', '', false); //optionlal
 		$this->setMyParamValue($this->clientdata['email'], 'POST', 'email', '', true);
-		$this->setMyParamValue($this->clientdata['password'], 'POST', 'password', '', true);
-		$this->setMyParamValue($this->clientdata['id_type'], 'POST', 'id_type', '', true);
+		$this->setMyParamValue($this->clientdata['password'], 'POST', 'password', '', false);
+		$this->setMyParamValue($this->clientdata['id_type'], 'POST', 'id_type', '', false);
 		$this->setMyParamValue($this->clientdata['id_number'], 'POST', 'id_number', '', true);
 		$this->setMyParamValue($this->clientdata['message'], 'POST', 'message', '', false);
 		$this->setMyParamValue($this->clientdata['clientip'], 'SERVER', 'REMOTE_ADDR', '', false);					
@@ -90,7 +94,14 @@ class BookingProcess
 		$this->taxAmount 			= $this->pricedata['totaltax'];
 		$this->grandTotalAmount 	= $this->pricedata['grandtotal'];
 		$this->totalPaymentAmount 	= $this->pricedata['advanceamount'];
-	
+
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Datos recibidos paso 4 Reserva ' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$Nlogs::INFO,session_id());
+		$logs->wLog('Datos recibidos paso 4 Cliente ' . '[title]=' . $this->clientdata['title'] . '[fname]=' . $this->clientdata['fname'] . '[lname]=' . $this->clientdata['lname'] . '[address]=' . $this->clientdata['address'] . '[city]=' . $this->clientdata['city'] . '[state]=' . $this->clientdata['state'] . '[zipcode]=' . $this->clientdata['zipcode'] . '[country]=' . $this->clientdata['country'] . '[phone]=' . $this->clientdata['phone'] . '[fax]=' . $this->clientdata['fax'] . '[email]=' . $this->clientdata['email'] . '[password]=' . $this->clientdata['password'] . '[id_type]=' . $this->clientdata['id_type'] . '[id_number]=' . $this->clientdata['id_number'] . '[message]=' . $this->clientdata['message'] . '[clientip]=' . $this->clientdata['clientip'] . '[paymentGatewayCode]=' . $this->paymentGatewayCode,$Nlogs::INFO,session_id());
+		$logs->wLog('Datos adicinales del proceso paso 4 ' . '[bookingId]=' . $this->bookingId . '[expTime]=' . $this->expTime . '[currencySymbol]=' . $this->currencySymbol . '[taxPercent]=' . $this->taxPercent . '[clientName]=' . $this->clientName . '[clientEmail]=' . $this->clientEmail . '[noOfRooms]=' . $this->noOfRooms . '[taxWithPrice]=' . $this->taxWithPrice,$Nlogs::INFO,session_id());
+
+
 	}
 	
 	private function setMyParamValue(&$membervariable, $vartype, $param, $defaultvalue, $required = false){
@@ -129,7 +140,11 @@ class BookingProcess
 		}		
 	}	
 	
-	private function invalidRequest($errocode = 9){		
+	private function invalidRequest($errocode = 9){
+
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Ocurrio un problema paos 3 invalidRequest [CODIGO_ERROR]=' . $errocode,$Nlogs::ERROR,session_id());
 		header('Location: booking-failure.php?error_code='.$errocode.'');
 		die;
 	}
@@ -146,6 +161,10 @@ class BookingProcess
 		if(isset($_SESSION['dvars_details'])) unset($_SESSION['dvars_details']);
 		if(isset($_SESSION['dv_roomidsonly'])) unset($_SESSION['dv_roomidsonly']);	
 		if(isset($_SESSION['dvars_roomprices'])) unset($_SESSION['dvars_roomprices']);
+
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Se remueven las variables de session',$Nlogs::INFO,session_id());
 	}
 	 
 	/* Check Immediate Booking Status For Concurrent Access */
@@ -173,26 +192,39 @@ class BookingProcess
 	
 	private function saveClientData(){
 		global $bsiCore;
+		$logs = new Logs();
+		$Nlogs = new NLogs();
 		$sql1 = mysql_query("SELECT client_id FROM bsi_clients WHERE email = '".$this->clientdata['email']."'");
+		$logs->wLog('Se comprobo si el cliente existia ' . '[clientId]=' . $this->clientId . '[email]=' .$this->clientdata['email'],$Nlogs::INFO,session_id());
 		if(mysql_num_rows($sql1) > 0){
 			$clientrow = mysql_fetch_assoc($sql1);
 			$this->clientId = $clientrow["client_id"];	
 			$passworddt=($this->clientdata['password'] != "")? "password='".md5($this->clientdata['password'])."'," : "";
 			
-			$sql2 = mysql_query("UPDATE bsi_clients SET first_name = '".$this->clientdata['fname']."', surname = '".$this->clientdata['lname']."', title = '".$this->clientdata['title']."', street_addr = '".$this->clientdata['address']."', city = '".$this->clientdata['city']."' , province = '".$this->clientdata['state']."', zip = '".$this->clientdata['zipcode']."', country = '".$this->clientdata['country']."', phone = '".$this->clientdata['phone']."', fax = '".$this->clientdata['fax']."',  id_type = '".$this->clientdata['id_type']."',  id_number = '".$this->clientdata['id_number']."', ".$passworddt." additional_comments = '".$this->clientdata['message']."', ip = '".$this->clientdata['clientip']."' WHERE client_id = ".$this->clientId);			 	
+			$sql2 = mysql_query("UPDATE bsi_clients SET first_name = '".$this->clientdata['fname']."', surname = '".$this->clientdata['lname']."', title = '".$this->clientdata['title']."', street_addr = '".$this->clientdata['address']."', city = '".$this->clientdata['city']."' , province = '".$this->clientdata['state']."', zip = '".$this->clientdata['zipcode']."', country = '".$this->clientdata['country']."', phone = '".$this->clientdata['phone']."', fax = '".$this->clientdata['fax']."',  id_type = '".$this->clientdata['id_type']."',  id_number = '".$this->clientdata['id_number']."', ".$passworddt." additional_comments = '".$this->clientdata['message']."', ip = '".$this->clientdata['clientip']."' WHERE client_id = ".$this->clientId);
+
+			$logs->wLog('Cliente ya existe en el sistema, actualizando sus datos ' . '[title]=' . $this->clientdata['title'] . '[fname]=' . $this->clientdata['fname'] . '[lname]=' . $this->clientdata['lname'] . '[address]=' . $this->clientdata['address'] . '[city]=' . $this->clientdata['city'] . '[state]=' . $this->clientdata['state'] . '[zipcode]=' . $this->clientdata['zipcode'] . '[country]=' . $this->clientdata['country'] . '[phone]=' . $this->clientdata['phone'] . '[fax]=' . $this->clientdata['fax'] . '[email]=' . $this->clientdata['email'] . '[password]=' . $this->clientdata['password'] . '[id_type]=' . $this->clientdata['id_type'] . '[id_number]=' . $this->clientdata['id_number'] . '[message]=' . $this->clientdata['message'] . '[clientip]=' . $this->clientdata['clientip'],$Nlogs::INFO,session_id());
+
 		}else{
 			$sql2 = mysql_query("INSERT INTO bsi_clients (first_name, surname, title, street_addr, city, province, zip, country, phone, fax, email, password,  id_type, id_number, additional_comments, ip) values('".$this->clientdata['fname']."', '".$this->clientdata['lname']."', '".$this->clientdata['title']."', '".$this->clientdata['address']."', '".$this->clientdata['city']."' , '".$this->clientdata['state']."', '".$this->clientdata['zipcode']."', '".$this->clientdata['country']."', '".$this->clientdata['phone']."', '".$this->clientdata['fax']."', '".$this->clientdata['email']."', '".md5($this->clientdata['password'])."', '".$this->clientdata['id_type']."', '".$this->clientdata['id_number']."', '".$this->clientdata['message']."', '".$this->clientdata['clientip']."')");
-			$this->clientId = mysql_insert_id();			
+			$this->clientId = mysql_insert_id();
+
+			$logs->wLog('Guardando datos del cliente por primera vez ' . '[title]=' . $this->clientdata['title'] . '[fname]=' . $this->clientdata['fname'] . '[lname]=' . $this->clientdata['lname'] . '[address]=' . $this->clientdata['address'] . '[city]=' . $this->clientdata['city'] . '[state]=' . $this->clientdata['state'] . '[zipcode]=' . $this->clientdata['zipcode'] . '[country]=' . $this->clientdata['country'] . '[phone]=' . $this->clientdata['phone'] . '[fax]=' . $this->clientdata['fax'] . '[email]=' . $this->clientdata['email'] . '[password]=' . $this->clientdata['password'] . '[id_type]=' . $this->clientdata['id_type'] . '[id_number]=' . $this->clientdata['id_number'] . '[message]=' . $this->clientdata['message'] . '[clientip]=' . $this->clientdata['clientip'],$Nlogs::INFO,session_id());
 		}
 		mysql_free_result($sql1);		 
 	}
 	
 	private function saveBookingData(){
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+
 		$sql = mysql_query("INSERT INTO bsi_bookings (booking_id, booking_time, start_date, end_date, client_id, total_cost, payment_amount, payment_type, special_requests) values(".$this->bookingId.", NOW(), '".$this->mysqlCheckInDate."', '".$this->mysqlCheckOutDate."', ".$this->clientId.", ".$this->grandTotalAmount.", ".$this->totalPaymentAmount.", '".$this->paymentGatewayCode."', '".$this->clientdata['message']."')");
+		$logs->wLog('Se guarda la reserva de la casa ' . '[bookingId]=' . $this->bookingId . '[mysqlCheckInDate]=' .$this->mysqlCheckInDate. '[mysqlCheckOutDate]=' .$this->mysqlCheckOutDate. '[clientId]=' .$this->clientId. '[grandTotalAmount]=' .$this->grandTotalAmount. '[totalPaymentAmount]=' .$this->totalPaymentAmount. '[paymentGatewayCode]=' .$this->paymentGatewayCode. '[message]=' .$this->clientdata['message'],$Nlogs::INFO,session_id());
 		
 		foreach($this->reservationdata as $revdata){
 			foreach($revdata['availablerooms'] as $rooms){				
 			$sql = mysql_query("INSERT INTO bsi_reservation (bookings_id, room_id, room_type_id) values(".$this->bookingId.",  ".$rooms['roomid'].", ".$revdata['roomtypeid'].")");
+				$logs->wLog('Se guarda la reserva de la casa tabla reservation' . '[bookingId]=' . $this->bookingId . '[roomid]=' .$rooms['roomid']. '[roomtypeid]=' .$revdata['roomtypeid'],$Nlogs::INFO,session_id());
 			} 
 		}
 	}	

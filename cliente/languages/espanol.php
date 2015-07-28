@@ -1,6 +1,6 @@
 <?php
 define('ID_TYPE',' Tipo de identidad');
-define('ID_NUMBER',' Nro de Identidad');
+define('ID_NUMBER',' Nro de Pasaporte');
 define('ONLINE_BOOKING_TEXT','Reserva en línea');
 define('CHECK_IN_DATE_TEXT','Fecha de llegada');
 define('CHECK_OUT_DATE_TEXT','Fecha de salida');
@@ -45,9 +45,9 @@ define('SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT','Reserva en línea lo
 define('SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT','Lo siento que haya introducido un criterio de búsqueda válido. Inténtalo con criterios de búsqueda no válidos.');
 define('MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT','Número mínimo de noche no debe ser menos de.');
 define('PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT','Modifica Tu criterio de búsqueda.');
-define('BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT','La reserva no es posible para la fecha de check in:');
-define('PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT','Modifica Tu criterio de búsqueda según Hoteles fecha hora.');
-define('HOTELS_CURRENT_DATE_TIME_TEXT','Hoteles fecha actual:');
+define('BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT','No es posible realizar la reserva para la fecha de llegada:');
+define('PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT','Modifica tu consulta.');
+define('HOTELS_CURRENT_DATE_TIME_TEXT', 'Fecha actual:');
 define('SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT','Lo siento ninguna habitación disponible como Tu criterio de búsqueda. Inténtalo con ranura para otra fecha.');
 define('PER_ROOM_TEXT','por habitación');
 define('AND_TEXT','y');
@@ -91,9 +91,9 @@ define('FAX_TEXT','Fax');
 define('EMAIL_TEXT','Correo electrónico');
 define('PAYMENT_BY_TEXT','Metodo de pago');
 define('FIELD_REQUIRED_ALERT','Este campo es requerido');
-define('ADDITIONAL_REQUESTS_TEXT','Cualquier petición adicional');
+define('ADDITIONAL_REQUESTS_TEXT','Cualquier información adicional');
 define('I_AGREE_WITH_THE_TEXT',' Estoy de acuerdo con la');
-define('TERMS_AND_CONDITIONS_TEXT','Condiciones');
+define('TERMS_AND_CONDITIONS_TEXT','Terminos y Condiciones');
 define('CONFIRM_TEXT','Confirmar');
 define('CHECKOUT_TEXT','Checkout');
 define('BD_INC_TAX','I.v.a. incluído');

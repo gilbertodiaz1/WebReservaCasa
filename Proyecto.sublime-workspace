@@ -208,18 +208,10 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Gilberto/Desktop/Sistema de reserva 2/booking_details.php",
+			"contents": "<!doctype html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <title>IUCODING</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"css/bootstrap.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/bootstrap-responsive.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/datepicker.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"screen\"/>\n    <script type=\"text/javascript\" src=\"js/jquery.min.js\"></script>\n    <script type=\"text/javascript\" src=\"js/bootstrap.min.js\"></script>\n    <script type=\"text/javascript\" src=\"js/bootstrap-datepicker.js\"></script>\n    <script type=\"text/javascript\">\n        $(window).load(function () {\n        });\n    </script>\n</head>\n<body>\n<div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            <div id=\"body-div\">\n                <h1>IUCODING</h1>\n                <div class=\"wrapper\">\n                    <div class=\"htitel\">\n                        <h2 class=\"fl\" style=\"border:0; margin:0;\">Falta de reserva</h2>\n                    </div>\n                    <!-- start of search row -->\n                    <div class=\"container-fluid\" style=\"margin:0; padding:0;\">\n                        <div class=\"row-fluid\" style=\"background-color: #faac59; padding: 1% 0\">\n                            <div class=\"span12\" style=\"text-align:center; padding:20px 0\">\n                                <p style=\"color:#C00\">No se pudo enviar notificación por correo electrónico. Póngase en contacto con soporte técnico. </p>\n                                <div style=\"width:100%;\">\n                                    <button id=\"registerButton\" style=\"margin:0 auto\" type=\"button\" onClick=\"window.location.href='index.php'\">Regreso a casa</button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <!-- end of search row -->\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n</body>\n</html>\n",
 			"settings":
 			{
-				"buffer_size": 28633,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/booking_details.php",
-			"settings":
-			{
-				"buffer_size": 24271,
+				"buffer_size": 2153,
 				"line_ending": "Windows"
 			}
 		}
@@ -353,11 +345,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/WebReservaCasa",
-		"/C/xampp/htdocs/WebReservaCasa/cliente"
+		"/C/Users/Gilberto/Desktop/Log",
+		"/C/Users/Gilberto/Desktop/Log/vendor",
+		"/C/Users/Gilberto/Desktop/Log/vendor/psr",
+		"/C/Users/Gilberto/Desktop/Log/vendor/psr/log",
+		"/C/Users/Gilberto/Desktop/Log/vendor/psr/log/Psr",
+		"/C/Users/Gilberto/Desktop/Log/vendor/psr/log/Psr/Log",
+		"/C/Users/Gilberto/Desktop/Log/vendor/psr/log/Psr/Log/Test"
 	],
 	"file_history":
 	[
+		"/C/Users/Gilberto/Desktop/Log/composer.json",
+		"/C/Users/Gilberto/Desktop/Log/vendor/autoload.php",
+		"/C/Users/Gilberto/Desktop/Log/vendor/composer/autoload_real.php",
+		"/C/xampp/htdocs/WebReservaCasa/cliente/Log/Logger.php",
+		"/C/Users/Gilberto/Desktop/KLogger.php",
+		"/C/xampp/htdocs/WebReservaCasa/cliente/log.txt",
+		"/C/Users/Gilberto/Desktop/selects_depend/paisesestadosciudades.sql",
+		"/C/Users/Gilberto/Desktop/Sistema de reserva 2/booking_details.php",
+		"/C/Users/Gilberto/Desktop/booking_details.php",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/FileDiffs.sublime-settings",
 		"/C/xampp/htdocs/WebReservaCasa/cliente/includes/db.conn.php",
 		"/C/xampp/htdocs/WebReservaCasa/cliente/languages/espanol.php",
@@ -476,16 +482,7 @@
 		"/C/Users/Gilberto/Desktop/PayPal PHP/process.php",
 		"/C/Users/Gilberto/Desktop/PayPal PHP/config.php",
 		"/C/Users/Gilberto/Desktop/PayPal PHP/paypal.class.php",
-		"/C/Users/Gilberto/Desktop/starter/functions.php",
-		"/C/Users/Gilberto/Desktop/starter/class/contact.php",
-		"/C/Users/Gilberto/Desktop/starter/js/place-form.js",
-		"/C/Users/Gilberto/Desktop/starter/head.php",
-		"/C/Users/Gilberto/AppData/Local/Temp/Rar$DRa0.107/process.php",
-		"/C/Users/Gilberto/Desktop/config.php",
-		"/C/Users/Gilberto/Desktop/PayPal-PHP-SDK-master/sample/payments/AuthorizePaymentUsingPayPal.php",
-		"/C/Users/Gilberto/Desktop/custom_checkout/processOrder.php",
-		"/C/Users/Gilberto/Desktop/PayPal PHP/ReadMe.txt",
-		"/C/Users/Gilberto/Desktop/Nueva carpeta/index.html"
+		"/C/Users/Gilberto/Desktop/starter/functions.php"
 	],
 	"find":
 	{
@@ -509,6 +506,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getLogger",
 			"for=",
 			"form",
 			"span",
@@ -635,8 +633,7 @@
 			".text",
 			".text-justify",
 			".center",
-			"center",
-			".center"
+			"center"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -660,83 +657,31 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Gilberto/Desktop/Sistema de reserva 2/booking_details.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 28633,
+						"buffer_size": 2153,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								23702,
-								23702
+								957,
+								957
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 10146.0,
+						"translation.y": 150.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Gilberto/Desktop/booking_details.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 24271,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17041,
-								17041
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8323.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -908,7 +853,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 255.0,
 	"status_bar_visible": true,
 	"template_settings":

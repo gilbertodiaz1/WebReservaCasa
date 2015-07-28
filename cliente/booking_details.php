@@ -3,8 +3,10 @@ session_start();
 include("includes/db.conn.php");
 include("includes/conf.class.php");
 include("language.php");
-
 include("includes/details.class.php");
+require_once("includes/logs.php");
+require_once("includes/Nlogs.php");
+$logs->wLog('Inicio del paso 3',$Nlogs::INFO,session_id());
 $bsibooking = new bsiBookingDetails();
 $bsiCore->clearExpiredBookings();
 ?>
@@ -16,18 +18,14 @@ $bsiCore->clearExpiredBookings();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
-
     <script type="text/javascript">
         $(window).load(function () {
-
         });
     </script>
-
     <script type="text/javascript">
         $().ready(function () {
             $("#form1").validate();
@@ -61,7 +59,7 @@ $bsiCore->clearExpiredBookings();
                             $('#forgot_pass').html('')
                             $("#email_addr_existing").attr("disabled", "disabled");
                             $("#login_password").attr("disabled", "disabled");
-                            $("#password").removeClass("required");
+                            //$("#password").removeClass("required");
                         } else {
                             alert(data.strmsg);
                             $('#fname').val('')
@@ -103,7 +101,7 @@ $bsiCore->clearExpiredBookings();
                     $('#id_type').val('')
                     $('#id_number').val('')
                     $('#forgot_pass').html('Forgot Password?')
-                    $("#password").addClass("required");
+                    //$("#password").addClass("required");
                     $('#exist_wait').html("")
                 } else if ($('#btn_exisitng_cust').val() == '3') {
                     $('#exist_wait').html("<img src='images/ajax-loader.gif' border='0'>")
@@ -162,9 +160,81 @@ $bsiCore->clearExpiredBookings();
             return false;
         }
     </script>
-</head>
-<body>
+    <script type="text/javascript">
+        $(function () {
 
+            var rules = {
+                'username': {
+                    minLength: {
+                        value: 2,
+                        message: 'This field must have at least 2 characters'
+                    },
+                    maxLength: {
+                        value: 7,
+                        message: 'This field can contain maximum 7 characters'
+                    }
+                },
+
+                'repeatUsername': {
+                    equal: {
+                        value: $('#username'),
+                        message: 'The username must be the same'
+                    }
+                },
+
+                'email': {
+                    email: {
+                        message: 'The email is incorrect'
+                    }
+                },
+
+                'catWord': {
+                    catLanguage: {
+                        message: 'That is not a cat word!'
+                    }
+                }
+            };
+
+            $('#formulario').setValidationRules(
+                rules,
+                function () {
+                    console.log('Form sucessfully validated :D');
+                }
+            );
+        });
+    </script>
+</head>
+<body class="grey lighten-4">
+<nav class="grey lighten-3" role="navigation">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="home.php" class="brand-logo gold-text text-darken-3">Gold Coast Condo</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse gold-text text-darken-3">
+                <i class="mdi-navigation-menu"></i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a class="gold-text text-darken-3" href="home.php">Inicio</a>
+                </li>
+                <li>
+                    <a class="gold-text text-darken-3" href="gallery.php">Galer&iacute;a</a>
+                </li>
+                <li
+                    ><a class="gold-text text-darken-3" href="contact.php">Contacto</a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a class="gold-text text-darken-3" href="home.php">Inicio</a>
+                </li>
+                <li><a class="gold-text text-darken-3" href="gallery.php">Galería</a>
+                </li>
+                <li><a class="gold-text text-darken-3" href="contact.php">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
 <div class="container">
     <div class="row">
         <div class="col s12 center">
@@ -195,7 +265,7 @@ $bsiCore->clearExpiredBookings();
                 <h4><?php echo BOOKING_DETAILS_TEXT; ?></h4>
 
                 <div class="divider"></div>
-                <div class="row">
+                <div class="row card-panel">
 
                     <table cellpadding="4" cellspacing="1" class="striped centered">
                         <thead>
@@ -302,25 +372,31 @@ $bsiCore->clearExpiredBookings();
                     </table>
 
                 </div>
+                <h4>
+                    <?php
+                        $logs->wLog('Detalle de la reserva paso 3' . '[Fechas de llegada]=' . $bsibooking->checkInDate . '[Fechas de salida]=' . $bsibooking->checkOutDate . '[Cantidad de noches]=' . $bsibooking->nightCount . '[Precio total]=' . $bsibooking->roomPrices['grandtotal'] . '' . $_SESSION['sv_currency'],$Nlogs::INFO,session_id());
+                        echo CUSTOMER_DETAILS_TEXT;
+                    ?>
+                </h4>
 
-                <div class="row">
-                    <div class="col s12">
-                        <h4>
-                            <?php echo CUSTOMER_DETAILS_TEXT; ?>
-                        </h4>
-                    </div>
-                    <!-- start of search row -->
-                    <div class="col s12">
-                        <h5>
-                            <?php echo EXISTING_CUSTOMER_TEXT; ?>
+                <div class="divider"></div>
+            </div>
+
+            <div class="row card-panel">
+
+                <!-- start of search row -->
+                <div class="col s12">
+                    <form id="formulario" class="form-horizontal" action="booking-process.php" method="post" id="form1"
+                          style="width: 95%; margin: 0 2.5%">
+                        <!-- <h5>
+                            <?php /*echo EXISTING_CUSTOMER_TEXT; */ ?>
                         </h5>
 
-                        <form class="form-horizontal" action="booking-process.php" method="post" id="form1"
-                              style="width: 95%; margin: 0 2.5%">
+
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="email_addr_existing" type="email" class="validate">
-                                    <label for="email_addr_existing"><?php echo EMAIL_ADDRESS_TEXT; ?></label>
+                                    <label for="email_addr_existing"><?php /*echo EMAIL_ADDRESS_TEXT; */ ?></label>
                                 </div>
                                 <div class="input-field col s6">
                                     <input id="login_password" type="password" class="validate" maxlength="16">
@@ -338,175 +414,189 @@ $bsiCore->clearExpiredBookings();
 
                                 <div class="controls">
                                     <button id="btn_exisitng_cust" type="button" class="btn waves-effect waves-light">
-                                        <?php echo FETCH_DETAILS_TEXT; ?>
+                                        <?php /*echo FETCH_DETAILS_TEXT; */ ?>
                                     </button>
                                     <!-- <a href="javascript:;" id="forgot_pass" style="width:150px; display:inline-block; padding-left:10px; cursor:pointer;">
                                          Forgot Password?
                                      </a>-->
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="divider"></div>
-                            <br>
-                            <h5 align="left">
-                                <?php echo NEW_CUSTOMER_TEXT; ?>
-                            </h5>
-                            <input type="hidden" name="allowlang" id="allowlang" value="no"/>
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <br>-->
+                        <!--                            <br>-->
 
-                            <div class="control-group">
-                                <label class="control-label" name="title" for="title">Title </label>
+                        <br>
+                        <!--                            <h5 align="left">-->
+                        <!--                                --><?php //echo NEW_CUSTOMER_TEXT; ?>
+                        <!--                            </h5>-->
+                        <input type="hidden" name="allowlang" id="allowlang" value="no"/>
 
-                                <div class="controls">
-                                    <select id="title">
-                                        <option value="Mr."><?php echo MR_TEXT; ?>.</option>
-                                        <option value="Ms."><?php echo MS_TEXT; ?>.</option>
-                                        <option value="Mrs."><?php echo MRS_TEXT; ?>.</option>
-                                        <option value="Miss."><?php echo MISS_TEXT; ?>.</option>
-                                        <option value="Dr."><?php echo DR_TEXT; ?></option>
-                                        <option value="Prof."><?php echo PROF_TEXT; ?>.</option>
-                                    </select>
-                                </div>
+                        <div class="row">
+                            <div class="input-field col s1 hide">
+                                <select id="title">
+                                    <option value="Mr."><?php echo MR_TEXT; ?>.</option>
+                                    <option value="Ms."><?php echo MS_TEXT; ?>.</option>
+                                    <option value="Mrs."><?php echo MRS_TEXT; ?>.</option>
+                                    <option value="Miss."><?php echo MISS_TEXT; ?>.</option>
+                                    <option value="Dr."><?php echo DR_TEXT; ?></option>
+                                    <option value="Prof."><?php echo PROF_TEXT; ?>.</option>
+                                </select>
+                                <label>Title</label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="fname" id="fname" type="text" class="validate">
-                                    <label for="fname">
-                                        <?php echo FIRST_NAME_TEXT; ?>
-                                    </label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="lname" id="lname" type="text" class="validate">
-                                    <label for="lname">
-                                        <?php echo LAST_NAME_TEXT; ?>
-                                    </label>
-                                </div>
+                            <div class="input-field col s2">
+                                <i class="material-icons prefix">create</i>
+                                <input name="id_number" id="id_number" type="text" class="validate" required>
+                                <label for="id_number">
+                                    <?php echo ID_NUMBER; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input name="str_addr" id="str_addr" type="text" class="validate">
-                                    <label for="str_addr">
-                                        <?php echo ADDRESS_TEXT; ?>
-                                    </label>
-                                </div>
+                            <div class="input-field col s5">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input name="fname" id="fname" type="text" class="validate" required>
+                                <label for="fname">
+                                    <?php echo FIRST_NAME_TEXT; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="city" id="city" type="text" class="validate">
-                                    <label for="city">
-                                        <?php echo CITY_TEXT; ?>
-                                    </label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="state" id="state" type="text" class="validate">
-                                    <label for="state">
-                                        <?php echo STATE_TEXT; ?>
-                                    </label>
-                                </div>
+                            <div class="input-field col s5">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input name="lname" id="lname" type="text" class="validate" required>
+                                <label for="lname">
+                                    <?php echo LAST_NAME_TEXT; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="country" id="country" type="text" class="validate">
-                                    <label for="country">
-                                        <?php echo COUNTRY_TEXT; ?>
-                                    </label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="zipcode" id="zipcode" type="text" class="validate">
-                                    <label for="zipcode">
-                                        <?php echo POSTAL_CODE_TEXT; ?>
-                                    </label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">directions</i>
+                                <input name="str_addr" id="str_addr" type="text" class="validate" required>
+                                <label for="str_addr">
+                                    <?php echo ADDRESS_TEXT; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="phone" id="phone" type="text" class="validate">
-                                    <label for="phone">
-                                        <?php echo PHONE_TEXT; ?>
-                                    </label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="fax" id="fax" type="text" class="validate">
-                                    <label for="fax">
-                                        <?php echo FAX_TEXT; ?>
-                                    </label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">place</i>
+                                <input name="city" id="city" type="text" class="validate" required>
+                                <label for="city">
+                                    <?php echo CITY_TEXT; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="id_type" id="id_type" type="text" class="validate">
-                                    <label for="id_type">
-                                        <?php echo ID_TYPE; ?> (e.g.: passport.)
-                                    </label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="id_number" id="id_number" type="text" class="validate">
-                                    <label for="id_number">
-                                        <?php echo ID_NUMBER; ?> (e.g.: passport number.)
-                                    </label>
-                                </div>
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">place</i>
+                                <input name="state" id="state" type="text" class="validate" required>
+                                <label for="state">
+                                    <?php echo STATE_TEXT; ?>
+                                </label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input name="email" id="email" type="text" class="validate">
-                                    <label for="email"><?php echo EMAIL_TEXT; ?></label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input name="password" id="password" type="password" class="validate" maxlength="16">
-                                    <label for="password">Password</label>
-                                </div>
+                            <div class="input-field col s4">
+                                <i class="material-icons prefix">place</i>
+                                <input name="country" id="country" type="text" class="validate" required>
+                                <label for="country">
+                                    <?php echo COUNTRY_TEXT; ?>
+                                </label>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">create</i>
+                                <input name="zipcode" id="zipcode" type="text" class="validate" required>
+                                <label for="zipcode">
+                                    <?php echo POSTAL_CODE_TEXT; ?>
+                                </label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input name="phone" id="phone" type="text" class="validate" required>
+                                <label for="phone">
+                                    <?php echo PHONE_TEXT; ?>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6 hide">
+                                <input name="id_type" id="id_type" type="text" class="validate" required value="passport">
+                                <label for="id_type">
+                                    <?php echo ID_TYPE; ?> (e.g.: passport.)
+                                </label>
+                            </div>
+<!--                            <div class="input-field col s6">-->
+<!--                                <input name="id_number" id="id_number" type="text" class="validate" required>-->
+<!--                                <label for="id_number">-->
+<!--                                    --><?php //echo ID_NUMBER; ?><!-- (e.g.: passport number.)-->
+<!--                                </label>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mail</i>
+                                <input name="email" id="email" type="email" class="validate" data-error="Escriba un correo valido" required>
+                                <label for="email"><?php echo EMAIL_TEXT; ?></label>
+                            </div>
+                            <div class="input-field col s6 hide">
+                                <input name="password" id="password" type="password" class="validate" maxlength="16">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
 
-                            <div class="control-group">
-                                <label class="control-label" for="pb"><?php echo PAYMENT_BY_TEXT; ?>:</label>
+                        <div class="control-group">
+                            <label class="control-label" for="pb"><?php echo PAYMENT_BY_TEXT; ?>:</label>
 
-                                <div class="controls">
-                                    <?php
-                                    $paymentGatewayDetails = $bsiCore->loadPaymentGateways();
-                                    foreach ($paymentGatewayDetails as $key => $value) {
-                                        echo '<p><input type="radio" name="payment_type" id="payment_type_' . $key . '" value="' . $key . '" class="required" /> ' . '<label class="radio" for="payment_type_' . $key . '">' . $value['name'] . '</label></p>';
-                                    }
-                                    ?>
-                                    <label class="error" generated="true" for="payment_type"
-                                           style="display:none;"><?php echo FIELD_REQUIRED_ALERT; ?>.</label>
-                                </div>
+                            <div class="controls">
+                                <?php
+                                $paymentGatewayDetails = $bsiCore->loadPaymentGateways();
+                                foreach ($paymentGatewayDetails as $key => $value) {
+                                    echo '<p><input required type="radio" name="payment_type" id="payment_type_' . $key . '" value="' . $key . '" class="valedate with-gap" /> ' . '<label class="radio" for="payment_type_' . $key . '">' . $value['name'] . '</label></p>';
+                                }
+                                ?>
+                                <label class="error" generated="true" for="payment_type"
+                                       style="display:none;"><?php echo FIELD_REQUIRED_ALERT; ?>.</label>
                             </div>
+                        </div>
 
-                            <div class="control-group">
-                                <div class="input-field col s12">
-                                    <textarea id="ar" class="materialize-textarea" name="message"></textarea>
-                                    <label for="ar"><?php echo ADDITIONAL_REQUESTS_TEXT; ?></label>
-                                </div>
-                                <p>
-                                    <input type="checkbox" class="filled-in" id="tos" name="tos"/>
-                                    <label for="tos"><?php echo I_AGREE_WITH_THE_TEXT; ?></label> <a
-                                        href="javascript: ;"
-                                        onClick="javascript:myPopup2();">
-                                        <?php echo TERMS_AND_CONDITIONS_TEXT; ?>.
-                                    </a>
-                                </p>
+                        <div class="control-group">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">create</i>
+                                <textarea id="ar" class="materialize-textarea" name="message"></textarea>
+                                <label for="ar"><?php echo ADDITIONAL_REQUESTS_TEXT; ?></label>
                             </div>
-                    </div>
-                    <!-- end of search row -->
+                            <p>
+                                <input type="checkbox" class="filled-in" id="tos" name="tos" required/>
+                                <label for="tos"><?php echo I_AGREE_WITH_THE_TEXT; ?></label> <a
+                                    href="javascript: ;"
+                                    onClick="javascript:myPopup2();">
+                                    <?php echo TERMS_AND_CONDITIONS_TEXT; ?>.
+                                </a>
+                            </p>
+                        </div>
                 </div>
-                <div class="row">
-                    <div class="col s4 center-align">
-                        <button id="registerButton" type="button" onClick="window.location.href='booking-search.php'"
-                                class="btn waves-effect waves-light"><?php echo BACK_TEXT; ?></button>
-                    </div>
-                    <div class="col s4 center-align">
-                        <button id="registerButton" type="button" onClick="window.location.href='index.php'"
-                                class="btn waves-effect waves-light"><?php echo HOME_TEXT; ?></button>
-                    </div>
-                    <div class="col s4 center-align">
-                        <button id="registerButton" type="submit"
-                                class="btn waves-effect waves-light"><?php echo CONTINUE_TEXT; ?></button>
-                    </div>
-                </div>
-                </form>
+                <!-- end of search row -->
             </div>
+            <br>
+            <div class="row">
+                <div class="col s4 center-align">
+                    <button type="button" onClick="window.location.href='booking-search.php'"
+                            class="btn waves-effect waves-light"><?php echo BACK_TEXT; ?></button>
+                </div>
+                <div class="col s4 center-align">
+                    <button type="button" onClick="window.location.href='<?php echo URL_INDEX; ?>'"
+                            class="btn waves-effect waves-light"><?php echo HOME_TEXT; ?></button>
+                </div>
+                <div class="col s4 center-align">
+                    <button id="registerButton" type="submit"
+                            class="btn waves-effect waves-light"><?php echo CONTINUE_TEXT; ?></button>
+                </div>
+            </div>
+            </form>
         </div>
     </div>
 </div>
+</div>
+<footer class="page-footer grey lighten-2">
+    <div class="footer-copyright grey darken-4">
+        <div class="container">
+            © 2015 Copyright <a class="white-text" href="#">IUCoding</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

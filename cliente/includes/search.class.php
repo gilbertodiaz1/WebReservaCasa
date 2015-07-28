@@ -5,6 +5,9 @@
 * @copyright BestSoft Inc.
 * See COPYRIGHT.php for copyright notices and details.
 */
+require_once ("logs.php");
+require_once ("Nlogs.php");
+
 class bsiSearch
 {
 	public $checkInDate = '';
@@ -74,9 +77,17 @@ class bsiSearch
 		$_SESSION['sv_childcount'] = $this->childPerRoom;	
 		$_SESSION['sv_currency'] = $this->currency;	
 		$_SESSION['svars_details'] = array();
+
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Datos recibidos paso 2 ' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$Nlogs::INFO,session_id());
 	}
 	
 	private function invalidRequest(){
+
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Ocurrio un problema paso 2 invalidRequest',$Nlogs::ERROR,session_id());
 		header('Location: booking-failure.php?error_code=9');
 		die;
 	}
@@ -152,7 +163,11 @@ class bsiSearch
 	}
 	
 	public function getAvailableRooms($roomTypeId, $roomTypeName, $capcityid){
-		global $bsiCore;		
+		global $bsiCore;
+		$logs = new Logs();
+		$Nlogs = new NLogs();
+		$logs->wLog('Consulta disponibilidad de fechas paso 2',$Nlogs::INFO,session_id());
+
 		$currency_symbol = 'USD';
 		$searchresult = array('roomtypeid'=>$roomTypeId, 'roomtypename'=>$roomTypeName, 'capacityid'=>$capcityid, 'capacitytitle'=>$this->multiCapacity[$capcityid]['captitle'], 'capacity'=>$this->multiCapacity[$capcityid]['capval'], 'maxchild'=>$this->childPerRoom);
 		$room_count = 0;

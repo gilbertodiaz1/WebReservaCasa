@@ -1,10 +1,20 @@
 <?php
 session_start();
+
+session_destroy();
+$parametros_cookies = session_get_cookie_params();
+setcookie(session_name(),0,1,$parametros_cookies["path"]);
+
+session_start();
 include("includes/db.conn.php");
 include("includes/conf.class.php");
 include("language.php");
+require_once ("includes/logs.php");
+require_once ("includes/Nlogs.php");
+$logs->wLog('Inicio del paso 1',$Nlogs::INFO,session_id());
 $bsiCore->exchange_rate_update();
 ?>
+
 <!doctype html>
 <html>
 <head>
@@ -47,7 +57,7 @@ $bsiCore->exchange_rate_update();
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkin" id="checkin" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="21/07/2015">
+                               aria-owns="birthdate_root" value="27/07/2015">
                         <label for="checkin">
                             <?php echo CHECK_IN_DATE_TEXT; ?>
                         </label>
@@ -56,7 +66,7 @@ $bsiCore->exchange_rate_update();
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkout" id="checkout" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="25/07/2015">
+                               aria-owns="birthdate_root" value="29/07/2015">
                         <label for="checkout">
                             <?php echo CHECK_OUT_DATE_TEXT; ?>
                         </label>

@@ -4,10 +4,18 @@ include("includes/db.conn.php");
 include("includes/conf.class.php");
 include("includes/search.class.php");
 include("language.php");
+require_once("includes/logs.php");
+require_once("includes/Nlogs.php");
+$logs->wLog('Inicio del paso 2',$Nlogs::INFO,session_id());
 $bsisearch = new bsiSearch();
 $bsiCore->clearExpiredBookings();
 $pos2 = strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME']);
 if ($bsisearch->nightCount == 0 and !$pos2) {
+    session_destroy();
+    $parametros_cookies = session_get_cookie_params();
+    setcookie(session_name(),0,1,$parametros_cookies["path"]);
+    $logs->wLog('Session destruida',$Nlogs::ALERT,session_id());
+    $logs->wLog('error_code=9 + ' . $_SERVER['HTTP_REFERER'] . ' - ' . $_SERVER['SERVER_NAME'],$Nlogs::ERROR,session_id());
     header('Location: booking-failure.php?error_code=9');
 }
 ?>
@@ -19,10 +27,9 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection"/>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body class="grey lighten-4">
 <nav class="grey lighten-3" role="navigation">
     <div class="container">
         <div class="nav-wrapper">
@@ -52,6 +59,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
         </div>
     </div>
 </nav>
+<br>
 <form name="searchresult" id="searchresult" method="post" action="booking_details.php"
       onSubmit="return validateSearchResultForm('<?php echo SELECT_ONE_ROOM_ALERT; ?>');">
     <div class="container">
@@ -80,7 +88,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
         <div class="row">
             <div class="col s12 center">
                 <h6>
-                    <?php echo SEARCH_INPUT_TEXT; ?> (<a href="<?php echo URL_INDEX; ?>"><?php echo MODIFY_SEARCH_TEXT; ?></a>)
+                    <?php echo SEARCH_INPUT_TEXT; ?> (<a
+                        href="<?php echo URL_INDEX; ?>"><?php echo MODIFY_SEARCH_TEXT; ?></a>)
                 </h6>
             </div>
         </div>
@@ -95,6 +104,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                     $room_result = $bsisearch->getAvailableRooms($room_type['rtid'], $room_type['rtname'], $capid);
                     $sqlroomcheck = mysql_query("select * from bsi_room where roomtype_id=" . $room_type['rtid'] . " and capacity_id=" . $capid);
                     if (mysql_num_rows($sqlroomcheck)) {
+                        $logs->wLog('Chequeando capacidad para la fecha seleccionada' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate,$Nlogs::INFO,session_id());
                         echo '<script> $(document).ready(function() { ';
                         echo '$("#iframe_' . str_replace(" ", "", $room_type['rtid']) . '_' . str_replace(" ", "", $capid) . $ik . '").colorbox({iframe:true,width: $(\'#body-div\').width() + \'px\', height: "90%"}); $("#iframe_details_' . str_replace(" ", "", $room_type['rtid']) . '_' . str_replace(" ", "", $capid) . $ik . '").colorbox({iframe:true,  width: $(\'#body-div\').width() + \'px\', height: "60%"}); $(".group_' . $room_type['rtid'] . '_' . $capid . '").colorbox({rel:\'group_' . $room_type['rtid'] . '_' . $capid . '\', maxWidth: $(\'#body-div\').width(), maxHeight:"80%", slideshow:true, slideshowSpeed:5000});';
                         echo '}); </script>';
@@ -129,7 +139,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-panel gold center" style="padding-left: 0; padding-right: 0; padding-bottom: 1px;">
+                                    <div class="card-panel gold center"
+                                         style="padding-left: 0; padding-right: 0; padding-bottom: 1px;">
                                         <div class="row">
                                             <div class="col s6">
                                                 <h6 class="white-text" style="font-size: 18px;">
@@ -150,13 +161,14 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                                         </div>
                                     </div>
                                     <br>
+
                                     <div class="row">
-                                         <div class="col s12 center">
+                                        <div class="col s12 center">
                                             <h5>
                                                 <strong>
                                                     <?php echo TOTAL_PRICE_OR_ROOM_TEXT; ?>
                                                 </strong>
-                                            <?php if ($room_result['specail_price_flag']) { ?>
+                                                <?php if ($room_result['specail_price_flag']) { ?>
                                                     <span style="font-weight:bold; color:#cc0000;">
                                                         <del>
                                                             <?php echo $bsiCore->get_currency_symbol($bsisearch->currency) . $bsiCore->getExchangemoney($room_result['totalprice'], $bsisearch->currency); ?>
@@ -175,13 +187,13 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                                                         <?php echo CHILD_TEXT; ?>)
                                                     <?php } ?>
 
-                                            <?php } else { ?>
+                                                <?php } else { ?>
                                                     <span style="font-weight:bold;">
                                                         <strong>
                                                             <?php echo $bsiCore->get_currency_symbol($bsisearch->currency) . $bsiCore->getExchangemoney($room_result['totalprice'], $bsisearch->currency); ?>
                                                         </strong>
                                                     </span>
-                                            <?php } ?>
+                                                <?php } ?>
                                             </h5>
                                         </div>
                                     </div>
@@ -204,6 +216,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                                             <?php
                                             if (intval($room_result['roomcnt']) > 0) {
                                                 $gotSearchResult = true;
+                                                $logs->wLog('Si hay disponibilidad',$Nlogs::INFO,session_id());
                                                 ?>
                                                 <td>
                                                     <strong>
@@ -241,6 +254,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                             </div>
                         </div>
                         <?php
+
+                        $logs->wLog('Resultado de la coonsulta' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate . '[Cantidad de personas]=' . $bsisearch->guestsPerRoom . '[Precio calculado total]=' . $room_result['totalprice'] . '' . $bsisearch->currency,$Nlogs::INFO,session_id());
                     }
                 }
             } ?>
@@ -250,20 +265,34 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
             if ($gotSearchResult) {
                 $flag88 = 1;
             } else {
-                echo '<table cellpadding="4" cellspacing="0" width="100%"><tbody><tr><td style="font-size:13px; color:#F00;" align="center"><br /><br />';
+                echo '<div class="container"><div class="row"><div class="col s12"><div class="card-panel red center-align"><span class="white-text">';
                 if ($bsisearch->searchCode == "SEARCH_ENGINE_TURN_OFF") {
                     echo SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT;
+                    $logs->wLog(SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT,$Nlogs::ALERT,session_id());
+
                 } else if ($bsisearch->searchCode == "OUT_BEFORE_IN") {
                     echo SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT;
+                    $logs->wLog(SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT,$Nlogs::ALERT,session_id());
+
                 } else if ($bsisearch->searchCode == "NOT_MINNIMUM_NIGHT") {
                     echo MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT . ' ' . $bsiCore->config['conf_min_night_booking'] . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT;
+                    $logs->wLog(MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT . ' ' . $bsiCore->config['conf_min_night_booking'] . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT,$Nlogs::ALERT,session_id());
+
                 } else if ($bsisearch->searchCode == "TIME_ZONE_MISMATCH") {
-                    $tempdate = date("l F j, Y G:i:s T");
+                    $tempdate = date("j/m/Y G:i:s");
                     echo BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT . ' ' . $bsisearch->checkInDate . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT . '<br>' . HOTELS_CURRENT_DATE_TIME_TEXT . ' ' . $tempdate;
+                    $logs->wLog(BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT . ' ' . $bsisearch->checkInDate . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT . '<br>' . HOTELS_CURRENT_DATE_TIME_TEXT . ' ' . $tempdate,$Nlogs::ALERT,session_id());
+
                 } else {
                     echo SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT;
+                    $logs->wLog(SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT,$Nlogs::ALERT,session_id());
                 }
-                echo '<br /><br /><br /></td></tr></tbody></table>';
+                echo '</span></div></div></div></div>';
+
+                session_destroy();
+                $parametros_cookies = session_get_cookie_params();
+                setcookie(session_name(),0,1,$parametros_cookies["path"]);
+                $logs->wLog('Session destruida',$Nlogs::ALERT,session_id());
             }
             ?>
         </div>
@@ -271,7 +300,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
             <div class="row center">
                 <?php if ($flag88) { ?>
                     <div class="col s6">
-                        <button id="registerButton" type="button" onClick="window.location.href='<?php echo URL_INDEX; ?>'"
+                        <button id="registerButton" type="button"
+                                onClick="window.location.href='<?php echo URL_INDEX; ?>'"
                                 class="btn waves-effect waves-light">
                             <?php echo BACK_TEXT; ?>
                         </button>
@@ -283,7 +313,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                     </div>
                 <?php } else { ?>
                     <div class="col s12">
-                        <button id="registerButton" type="button" onClick="window.location.href='<?php echo URL_INDEX; ?>'"
+                        <button id="registerButton" type="button"
+                                onClick="window.location.href='<?php echo URL_INDEX; ?>'"
                                 class="btn waves-effect waves-light">
                             <?php echo BACK_TEXT; ?>
                         </button>
