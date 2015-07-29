@@ -57,7 +57,7 @@ $bsiCore->exchange_rate_update();
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkin" id="checkin" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="27/07/2015">
+                               aria-owns="birthdate_root" value="29/07/2015">
                         <label for="checkin">
                             <?php echo CHECK_IN_DATE_TEXT; ?>
                         </label>
@@ -66,7 +66,7 @@ $bsiCore->exchange_rate_update();
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkout" id="checkout" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="29/07/2015">
+                               aria-owns="birthdate_root" value="31/07/2015">
                         <label for="checkout">
                             <?php echo CHECK_OUT_DATE_TEXT; ?>
                         </label>

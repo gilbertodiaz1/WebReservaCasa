@@ -2,7 +2,9 @@
 session_start();
 include("includes/db.conn.php");
 include("includes/conf.class.php");
+
 include("includes/mail.class.php");
+
 $row_default_lang = mysql_fetch_assoc(mysql_query("select * from bsi_language where `lang_default`=true"));
 include("languages/" . $row_default_lang['lang_file']);
 $paymentGatewayDetails = $bsiCore->loadPaymentGateways();
@@ -31,7 +33,7 @@ switch ($_GET['action']) {
         $p->add_field('invoice', $_POST['invoice']);
         $p->add_field('currency_code', $bsiCore->currency_code());
         $p->add_field('amount', $_POST['amount']);
-        $p->submit_paypal_post(); // submit the fields to paypal
+        $p->submit_paypal_postw(); // submit the fields to paypal
         //$p->dump_fields();      // for debugging, output a table of all the fields
         break;
     case 'success':      // Order was successful...

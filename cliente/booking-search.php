@@ -6,16 +6,16 @@ include("includes/search.class.php");
 include("language.php");
 require_once("includes/logs.php");
 require_once("includes/Nlogs.php");
-$logs->wLog('Inicio del paso 2',$Nlogs::INFO,session_id());
+$logs->wLog('Inicio del paso 2', $Nlogs::INFO, session_id());
 $bsisearch = new bsiSearch();
 $bsiCore->clearExpiredBookings();
 $pos2 = strpos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME']);
 if ($bsisearch->nightCount == 0 and !$pos2) {
     session_destroy();
     $parametros_cookies = session_get_cookie_params();
-    setcookie(session_name(),0,1,$parametros_cookies["path"]);
-    $logs->wLog('Session destruida',$Nlogs::ALERT,session_id());
-    $logs->wLog('error_code=9 + ' . $_SERVER['HTTP_REFERER'] . ' - ' . $_SERVER['SERVER_NAME'],$Nlogs::ERROR,session_id());
+    setcookie(session_name(), 0, 1, $parametros_cookies["path"]);
+    $logs->wLog('Session destruida', $Nlogs::ALERT, session_id());
+    $logs->wLog('error_code=9 + ' . $_SERVER['HTTP_REFERER'] . ' - ' . $_SERVER['SERVER_NAME'], $Nlogs::ERROR, session_id());
     header('Location: booking-failure.php?error_code=9');
 }
 ?>
@@ -60,6 +60,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
     </div>
 </nav>
 <br>
+
 <form name="searchresult" id="searchresult" method="post" action="booking_details.php"
       onSubmit="return validateSearchResultForm('<?php echo SELECT_ONE_ROOM_ALERT; ?>');">
     <div class="container">
@@ -104,7 +105,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                     $room_result = $bsisearch->getAvailableRooms($room_type['rtid'], $room_type['rtname'], $capid);
                     $sqlroomcheck = mysql_query("select * from bsi_room where roomtype_id=" . $room_type['rtid'] . " and capacity_id=" . $capid);
                     if (mysql_num_rows($sqlroomcheck)) {
-                        $logs->wLog('Chequeando capacidad para la fecha seleccionada' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate,$Nlogs::INFO,session_id());
+                        $logs->wLog('Chequeando capacidad para la fecha seleccionada' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate, $Nlogs::INFO, session_id());
                         echo '<script> $(document).ready(function() { ';
                         echo '$("#iframe_' . str_replace(" ", "", $room_type['rtid']) . '_' . str_replace(" ", "", $capid) . $ik . '").colorbox({iframe:true,width: $(\'#body-div\').width() + \'px\', height: "90%"}); $("#iframe_details_' . str_replace(" ", "", $room_type['rtid']) . '_' . str_replace(" ", "", $capid) . $ik . '").colorbox({iframe:true,  width: $(\'#body-div\').width() + \'px\', height: "60%"}); $(".group_' . $room_type['rtid'] . '_' . $capid . '").colorbox({rel:\'group_' . $room_type['rtid'] . '_' . $capid . '\', maxWidth: $(\'#body-div\').width(), maxHeight:"80%", slideshow:true, slideshowSpeed:5000});';
                         echo '}); </script>';
@@ -216,7 +217,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                                             <?php
                                             if (intval($room_result['roomcnt']) > 0) {
                                                 $gotSearchResult = true;
-                                                $logs->wLog('Si hay disponibilidad',$Nlogs::INFO,session_id());
+                                                $logs->wLog('Si hay disponibilidad', $Nlogs::INFO, session_id());
                                                 ?>
                                                 <td>
                                                     <strong>
@@ -255,7 +256,7 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                         </div>
                         <?php
 
-                        $logs->wLog('Resultado de la coonsulta' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate . '[Cantidad de personas]=' . $bsisearch->guestsPerRoom . '[Precio calculado total]=' . $room_result['totalprice'] . '' . $bsisearch->currency,$Nlogs::INFO,session_id());
+                        $logs->wLog('Resultado de la coonsulta' . '[Fecha de llegada]=' . $bsisearch->checkInDate . '[Fecha de salida]=' . $bsisearch->checkOutDate . '[Cantidad de personas]=' . $bsisearch->guestsPerRoom . '[Precio calculado total]=' . $room_result['totalprice'] . '' . $bsisearch->currency, $Nlogs::INFO, session_id());
                     }
                 }
             } ?>
@@ -268,35 +269,30 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
                 echo '<div class="container"><div class="row"><div class="col s12"><div class="card-panel red center-align"><span class="white-text">';
                 if ($bsisearch->searchCode == "SEARCH_ENGINE_TURN_OFF") {
                     echo SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT;
-                    $logs->wLog(SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT,$Nlogs::ALERT,session_id());
+                    $logs->wLog(SORRY_ONLINE_BOOKING_CURRENTLY_NOT_AVAILABLE_TEXT, $Nlogs::ALERT, session_id());
 
                 } else if ($bsisearch->searchCode == "OUT_BEFORE_IN") {
                     echo SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT;
-                    $logs->wLog(SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT,$Nlogs::ALERT,session_id());
+                    $logs->wLog(SORRY_YOU_HAVE_ENTERED_A_INVALID_SEARCHING_CRITERIA_TEXT, $Nlogs::ALERT, session_id());
 
                 } else if ($bsisearch->searchCode == "NOT_MINNIMUM_NIGHT") {
                     echo MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT . ' ' . $bsiCore->config['conf_min_night_booking'] . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT;
-                    $logs->wLog(MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT . ' ' . $bsiCore->config['conf_min_night_booking'] . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT,$Nlogs::ALERT,session_id());
+                    $logs->wLog(MINIMUM_NUMBER_OF_NIGHT_SHOULD_NOT_BE_LESS_THAN_TEXT . ' ' . $bsiCore->config['conf_min_night_booking'] . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TEXT, $Nlogs::ALERT, session_id());
 
                 } else if ($bsisearch->searchCode == "TIME_ZONE_MISMATCH") {
                     $tempdate = date("j/m/Y G:i:s");
                     echo BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT . ' ' . $bsisearch->checkInDate . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT . '<br>' . HOTELS_CURRENT_DATE_TIME_TEXT . ' ' . $tempdate;
-                    $logs->wLog(BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT . ' ' . $bsisearch->checkInDate . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT . '<br>' . HOTELS_CURRENT_DATE_TIME_TEXT . ' ' . $tempdate,$Nlogs::ALERT,session_id());
+                    $logs->wLog(BOOKING_NOT_POSSIBLE_FOR_CHECK_IN_DATE_TEXT . ' ' . $bsisearch->checkInDate . ' ' . PLEASE_MODIFY_YOUR_SEARCHING_CRITERIA_TO_HOTELS_DATE_TIME_TEXT . '<br>' . HOTELS_CURRENT_DATE_TIME_TEXT . ' ' . $tempdate, $Nlogs::ALERT, session_id());
 
                 } else {
                     echo SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT;
-                    $logs->wLog(SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT,$Nlogs::ALERT,session_id());
+                    $logs->wLog(SORRY_NO_ROOM_AVAILABLE_AS_YOUR_SEARCHING_CRITERIA_TRY_DIFFERENT_DATE_SLOT, $Nlogs::ALERT, session_id());
                 }
                 echo '</span></div></div></div></div>';
-
-                session_destroy();
-                $parametros_cookies = session_get_cookie_params();
-                setcookie(session_name(),0,1,$parametros_cookies["path"]);
-                $logs->wLog('Session destruida',$Nlogs::ALERT,session_id());
             }
             ?>
         </div>
-        <div class="container">
+        <div class="container" style="margin-bottom: 50px;">
             <div class="row center">
                 <?php if ($flag88) { ?>
                     <div class="col s6">
@@ -323,8 +319,8 @@ if ($bsisearch->nightCount == 0 and !$pos2) {
             </div>
         </div>
     </div>
-
 </form>
+<br><br>
 <footer class="page-footer grey lighten-2">
     <div class="footer-copyright grey darken-4">
         <div class="container">
