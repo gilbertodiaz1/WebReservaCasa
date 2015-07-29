@@ -2,9 +2,7 @@
 session_start();
 include("includes/db.conn.php");
 include("includes/conf.class.php");
-require_once("includes/logs.php");
-require_once("includes/Nlogs.php");
-$logs->wLog('Inicio del paso 4 Proceso de pago',$Nlogs::INFO,session_id());
+$bsiCore->wLog('Inicio del paso 4 Proceso de pago',$bsiCore::INFO,session_id());
 $row_default_lang = mysql_fetch_assoc(mysql_query("select * from bsi_language where `lang_default`=true"));
 include("languages/" . $row_default_lang['lang_file']);
 
@@ -22,7 +20,7 @@ switch ($bookprs->paymentGatewayCode) {
         break;
 
     case "pp":
-        $logs->wLog('Metodo de pago PayPal',$Nlogs::INFO,session_id());
+        $bsiCore->wLog('Metodo de pago PayPal',$bsiCore::INFO,session_id());
         processPayPal();
         break;
 
@@ -86,9 +84,8 @@ function processPayPal()
 {
     global $bookprs;
     global $bsiCore;
-    $logs = new Logs();
-    $Nlogs = new NLogs();
-    $logs->wLog('Comienzo armado de redireccion PayPal',$Nlogs::INFO,session_id());
+
+    $bsiCore->wLog('Comienzo armado de redireccion PayPal',$bsiCore::INFO,session_id());
     echo "<script language=\"JavaScript\">";
     echo "document.write('<form action=\"paypal.php\" method=\"post\" name=\"formpaypal\">');";
     echo "document.write('<input type=\"hidden\" name=\"amount\"  value=\"" . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2)) . "\">');";
@@ -96,7 +93,7 @@ function processPayPal()
     echo "document.write('</form>');";
     echo "setTimeout(\"document.formpaypal.submit()\",500);";
     echo "</script>";
-    $logs->wLog('Datos que se le envian a PayPal' . '[MONTO A PAGAR]=' . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2) . '[MONTO A PAGAR]=' . $bookprs->bookingId),$Nlogs::INFO,session_id());
+    $bsiCore->wLog('Datos que se le envian a PayPal' . '[MONTO A PAGAR]=' . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2) . '[MONTO A PAGAR]=' . $bookprs->bookingId),$bsiCore::INFO,session_id());
 }
 
 /* CREDIT CARD PAYMENT */

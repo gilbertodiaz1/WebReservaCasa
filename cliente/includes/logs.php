@@ -6,9 +6,9 @@
  * Date: 27/07/2015
  * Time: 9:59
  */
-$logs = new Logs();
+//$logs = new Logs();
 
-class Logs
+/*class Logs
 {
     private $message;
     private $status;
@@ -45,4 +45,4 @@ class Logs
             return array($this->status => false, $this->message => 'No es posible escribir en la base de datos.');
         }
     }
-}
+}*/

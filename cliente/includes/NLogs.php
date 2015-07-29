@@ -6,7 +6,7 @@
  * Date: 27/07/2015
  * Time: 9:59
  */
-$Nlogs = new NLogs();
+/*$Nlogs = new NLogs();
 class NLogs
 {
     const EMERGENCY = 'EMERGENCY';
@@ -17,4 +17,4 @@ class NLogs
     const NOTICE = 'NOTICE';
     const INFO = 'INFO';
     const DEBUG = 'DEBUG';
-}
+}*/

@@ -4,9 +4,7 @@ include("includes/db.conn.php");
 include("includes/conf.class.php");
 include("language.php");
 include("includes/details.class.php");
-require_once("includes/logs.php");
-require_once("includes/Nlogs.php");
-$logs->wLog('Inicio del paso 3',$Nlogs::INFO,session_id());
+$bsiCore->wLog('Inicio del paso 3',$bsiCore::INFO,session_id());
 $bsibooking = new bsiBookingDetails();
 $bsiCore->clearExpiredBookings();
 ?>
@@ -374,7 +372,7 @@ $bsiCore->clearExpiredBookings();
                 </div>
                 <h4>
                     <?php
-                        $logs->wLog('Detalle de la reserva paso 3' . '[Fechas de llegada]=' . $bsibooking->checkInDate . '[Fechas de salida]=' . $bsibooking->checkOutDate . '[Cantidad de noches]=' . $bsibooking->nightCount . '[Precio total]=' . $bsibooking->roomPrices['grandtotal'] . '' . $_SESSION['sv_currency'],$Nlogs::INFO,session_id());
+                    $bsiCore->wLog('Detalle de la reserva paso 3' . '[Fechas de llegada]=' . $bsibooking->checkInDate . '[Fechas de salida]=' . $bsibooking->checkOutDate . '[Cantidad de noches]=' . $bsibooking->nightCount . '[Precio total]=' . $bsibooking->roomPrices['grandtotal'] . '' . $_SESSION['sv_currency'],$bsiCore::INFO,session_id());
                         echo CUSTOMER_DETAILS_TEXT;
                     ?>
                 </h4>

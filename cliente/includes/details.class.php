@@ -6,8 +6,6 @@
  * @copyright BestSoft Inc.
  * See COPYRIGHT.php for copyright notices and details.
  */
-require_once ("logs.php");
-require_once ("Nlogs.php");
 
 class bsiBookingDetails
 {
@@ -51,9 +49,7 @@ class bsiBookingDetails
             if ($val) $selected++;
         }
 
-        $logs = new Logs();
-        $Nlogs = new NLogs();
-        $logs->wLog('Datos recibidos paso 3' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$Nlogs::INFO,session_id());
+        $bsiCore->wLog('Datos recibidos paso 3' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$bsiCore::INFO,session_id());
 
         if ($selected == 0) $this->invalidRequest(9);
     }
@@ -177,9 +173,9 @@ class bsiBookingDetails
 
     private function invalidRequest($errocode = 9)
     {
-        $logs = new Logs();
-        $Nlogs = new NLogs();
-        $logs->wLog('Ocurrio un problema paos 3 invalidRequest [CODIGO_ERROR]=' . $errocode,$Nlogs::ERROR,session_id());
+        global $bsiCore;
+
+        $bsiCore->wLog('Ocurrio un problema paos 3 invalidRequest [CODIGO_ERROR]=' . $errocode,$bsiCore::ERROR,session_id());
         header('Location: booking-failure.php?error_code=' . $errocode . '');
         die;
     }
@@ -187,9 +183,8 @@ class bsiBookingDetails
     public function generateBookingDetails()
     {
         global $bsiCore;
-        $logs = new Logs();
-        $Nlogs = new NLogs();
-        $logs->wLog('Genrando detalles de las reserva paso 3',$Nlogs::INFO,session_id());
+
+        $bsiCore->wLog('Genrando detalles de las reserva paso 3',$bsiCore::INFO,session_id());
         $result = array();
         $_SESSION['dvars_details2'] = array();
         $dvroomidsonly = "";

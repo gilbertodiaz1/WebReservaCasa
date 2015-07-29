@@ -1,18 +1,15 @@
 <?php
 session_start();
-
 session_destroy();
 $parametros_cookies = session_get_cookie_params();
 setcookie(session_name(),0,1,$parametros_cookies["path"]);
-
 session_start();
 include("includes/db.conn.php");
 include("includes/conf.class.php");
 include("language.php");
-require_once ("includes/logs.php");
-require_once ("includes/Nlogs.php");
-$logs->wLog('Inicio del paso 1',$Nlogs::INFO,session_id());
+//$logs->wLog('Inicio del paso 1',$Nlogs::INFO,session_id());
 $bsiCore->exchange_rate_update();
+$bsiCore->wLog('Inicio del paso 1',$bsiCore::INFO,session_id());
 ?>
 
 <!doctype html>

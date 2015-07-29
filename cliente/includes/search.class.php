@@ -5,8 +5,6 @@
 * @copyright BestSoft Inc.
 * See COPYRIGHT.php for copyright notices and details.
 */
-require_once ("logs.php");
-require_once ("Nlogs.php");
 
 class bsiSearch
 {
@@ -59,6 +57,7 @@ class bsiSearch
 		if(isset($paramvalue)){  $membervariable = $paramvalue;}else{$membervariable = $defaultvalue;}
 	}
 	private function setMySessionVars(){
+		global $bsiCore;
 		if(isset($_SESSION['sv_checkindate'])) unset($_SESSION['sv_checkindate']);
 		if(isset($_SESSION['sv_checkoutdate'])) unset($_SESSION['sv_checkoutdate']);
 		if(isset($_SESSION['sv_mcheckindate'])) unset($_SESSION['sv_mcheckindate']);
@@ -78,16 +77,13 @@ class bsiSearch
 		$_SESSION['sv_currency'] = $this->currency;	
 		$_SESSION['svars_details'] = array();
 
-		$logs = new Logs();
-		$Nlogs = new NLogs();
-		$logs->wLog('Datos recibidos paso 2 ' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$Nlogs::INFO,session_id());
+		$bsiCore->wLog('Datos recibidos paso 2 ' . '[Fecha de llegada]=' . $this->checkInDate . '[Fecha de salida]=' . $this->checkOutDate . '[Cantidad de personas]=' . $this->guestsPerRoom,$bsiCore::INFO,session_id());
 	}
 	
 	private function invalidRequest(){
+		global $bsiCore;
 
-		$logs = new Logs();
-		$Nlogs = new NLogs();
-		$logs->wLog('Ocurrio un problema paso 2 invalidRequest',$Nlogs::ERROR,session_id());
+		$bsiCore->wLog('Ocurrio un problema paso 2 invalidRequest',$bsiCore::ERROR,session_id());
 		header('Location: booking-failure.php?error_code=9');
 		die;
 	}
@@ -164,9 +160,8 @@ class bsiSearch
 	
 	public function getAvailableRooms($roomTypeId, $roomTypeName, $capcityid){
 		global $bsiCore;
-		$logs = new Logs();
-		$Nlogs = new NLogs();
-		$logs->wLog('Consulta disponibilidad de fechas paso 2',$Nlogs::INFO,session_id());
+
+		$bsiCore->wLog('Consulta disponibilidad de fechas paso 2',$bsiCore::INFO,session_id());
 
 		$currency_symbol = 'USD';
 		$searchresult = array('roomtypeid'=>$roomTypeId, 'roomtypename'=>$roomTypeName, 'capacityid'=>$capcityid, 'capacitytitle'=>$this->multiCapacity[$capcityid]['captitle'], 'capacity'=>$this->multiCapacity[$capcityid]['capval'], 'maxchild'=>$this->childPerRoom);
