@@ -113,7 +113,7 @@
     <footer class="page-footer grey lighten-2">
         <div class="footer-copyright grey darken-4">
             <div class="container">
-                © 2015 Copyright <a class="white-text" href="#">IUCoding</a>
+                &reg; 2015 Copyright <a class="white-text" href="#">IUCoding</a>
             </div>
         </div>
     </footer>

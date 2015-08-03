@@ -5,6 +5,9 @@
 * @copyright BestSoft Inc.
 * See COPYRIGHT.php for copyright notices and details.
 */
+require("class.phpmailer.php");
+require("class.smtp.php");
+
 class bsiMail 
 {
 	private $isSMTP 		= false;
@@ -50,7 +53,7 @@ class bsiMail
 		$this->emailTo = $emailTo;
 		$this->emailSubject = $emailSubject;
 		$this->emailBody = $emailBody;
-		return (($this->isSMTP == true)? $this->sendSMTPMail() : $this->sendPHPMail());		
+		return (($this->isSMTP == true)? $this->sendPHPMailer() : $this->sendPHPMail());
 	}
 	
 	/* Send Email using PHP Mail Function */	
@@ -63,7 +66,7 @@ class bsiMail
 		$emailHeaders .= 'reply-to: '.$this->emailReplyTo.'' . "\r\n";
 		$emailHeaders .= 'From: '.$this->emailFrom.'' . "\r\n";	
 		
-		$retmsg = mail($this->emailTo, $this->emailSubject, $this->emailBody, $emailHeaders);		
+		$retmsg = mail($this->emailTo, $this->emailSubject, $this->emailBody, $emailHeaders);
 		// Mail it
 		if ($retmsg) {
 			return true;
@@ -98,7 +101,36 @@ class bsiMail
 		}else {
 			return true;
 		}	
-	} 
+	}
+
+	public function sendPHPMailer()
+	{
+		global $bsiCore;
+
+		$mail = new PHPMailer();
+		$mail->IsSMTP();
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "tls";
+		$mail->Host = "smtp.gmail.com";
+		$mail->Port = 587;
+		$mail->Username = "jose.gilbertopinto@gmail.com";
+		$mail->Password = "gilberto.7";
+		$mail->CharSet = "UTF-8";
+
+		$mail->From = $this->emailFrom;
+		$mail->FromName = $this->emailFrom;
+		$mail->Subject = $this->emailSubject;
+		$mail->AltBody = "";
+		$mail->MsgHTML($this->emailBody);
+		$mail->AddAddress("jose.gilbertopinto@gmail.com", "Info");
+		$mail->IsHTML(true);
+
+		if(!$mail->send()) {
+/*			echo "No enviado";
+			echo 'Mailer Error: ' . $mail->ErrorInfo;*/
+			$bsiCore->wLog('Correo enviado. ' . $mail->ErrorInfo,$bsiCore::ERROR,session_id());
+		}
+	}
 		
 	public function loadEmailContent() {		
 		$sql = mysql_query("SELECT * FROM bsi_email_contents WHERE email_name = 'Confirmation Email'");

@@ -227,30 +227,6 @@
 				"line_ending": "Windows",
 				"name": "w3br3s3rv4"
 			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/conf.class.php",
-			"settings":
-			{
-				"buffer_size": 13900,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/db.conn.php",
-			"settings":
-			{
-				"buffer_size": 391,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Gilberto/Desktop/index.php",
-			"settings":
-			{
-				"buffer_size": 4707,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -386,10 +362,12 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Gilberto/Desktop/home.php",
+		"/C/Users/Gilberto/Desktop/db.conn.php",
+		"/C/Users/Gilberto/Desktop/conf.class.php",
 		"/C/Users/Gilberto/Desktop/index.php",
 		"/C/Users/Gilberto/Desktop/.htaccess",
 		"/C/Users/Gilberto/Desktop/PHP_errors.log",
-		"/C/Users/Gilberto/Desktop/db.conn.php",
 		"/C/Users/Gilberto/Desktop/logs.php",
 		"/C/Users/Gilberto/Desktop/language.php",
 		"/C/Users/Gilberto/Desktop/demo.rent-in-aruba.com-Jul-2015",
@@ -397,8 +375,6 @@
 		"/C/xampp/htdocs/PayPal/paypal.class.php",
 		"/C/xampp/htdocs/PayPal/index.php",
 		"/C/xampp/htdocs/PayPal/config.php",
-		"/C/Users/Gilberto/Desktop/conf.class.php",
-		"/C/Users/Gilberto/Desktop/home.php",
 		"/C/xampp/htdocs/PayPal/ReadMe.md",
 		"/C/Users/Gilberto/Desktop/base de datos2.sql",
 		"/C/Users/Gilberto/Desktop/base de datos.sql",
@@ -683,7 +659,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -698,8 +674,8 @@
 						"selection":
 						[
 							[
-								957,
-								957
+								1712,
+								1712
 							]
 						],
 						"settings":
@@ -709,10 +685,10 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 155.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -735,116 +711,6 @@
 						{
 							"auto_name": "w3br3s3rv4",
 							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Gilberto/Desktop/conf.class.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13900,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13598,
-								13598
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 8581.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Gilberto/Desktop/db.conn.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 391,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/Users/Gilberto/Desktop/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4707,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								359,
-								359
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

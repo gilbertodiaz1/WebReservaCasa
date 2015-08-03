@@ -7,7 +7,6 @@
  */
 $bsiCore = new bsiHotelCore;
 define('URL_INDEX', 'http://localhost:8080/webreservacasa/home.php');
-
 class bsiHotelCore
 {
     public $config = array();
@@ -165,7 +164,6 @@ class bsiHotelCore
                             <label class="control-label" for="checkInDate">' . CHILD_PER_ROOM_TEXT . ':</label>
                             <div class="controls">
                             	<select class="input-medium" id="child_per_room" name="child_per_room"><option value="0" selected>' . NONE_TEXT . '</option>';
-
             for ($k = 1; $k <= $rowchild['mchild']; $k++) {
                 $childhtml .= '<option value="' . $k . '">' . $k . '</option>';
             }
@@ -332,23 +330,17 @@ class bsiHotelCore
         if ($nivel == '') {
             return array($this->status => false, $this->message => 'NO_NIVEL');
         }
-
         if ($session == '') {
             return array($this->status => false, $this->message => 'NO_SESSION');
         }
-
         if (($remote_addr = $_SERVER['REMOTE_ADDR']) == '') {
             $remote_addr = "REMOTE_ADDR_UNKNOWN";
         }
-
         if (($request_uri = $_SERVER['REQUEST_URI']) == '') {
             $request_uri = "REQUEST_URI_UNKNOWN";
         }
-
-        $sql = "INSERT INTO bis_logs (IP, URI, NIVEL, MENSAJE, IDSESSION) VALUES('".$remote_addr."', '".$request_uri."','".$nivel."','".$mensaje."','".$session."')";
-
+        $sql = "INSERT INTO bis_logs (IP, URI, NIVEL, MENSAJE, IDSESSION) VALUES('".$remote_addr."', '".$request_uri."','".$nivel."','[" . date("d-m-Y H:i:s") . "]".$mensaje."','".$session."')";
         $result = mysql_query($sql);
-
         if ($result) {
             return array($this->status => true);
         } else {
