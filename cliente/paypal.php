@@ -29,11 +29,14 @@ switch ($_GET['action']) {
         $p->add_field('return', $this_script . '?action=success');
         $p->add_field('cancel_return', $this_script . '?action=cancel');
         $p->add_field('notify_url', $this_script . '?action=ipn');
-        $p->add_field('item_name', $bsiCore->config['conf_hotel_name']);
+        $p->add_field('item_name', $bsiCore->config['conf_hotel_name']); //cambiar por la ifnroamcion del producto
         $p->add_field('invoice', $_POST['invoice']);
         $p->add_field('currency_code', $bsiCore->currency_code());
         $p->add_field('amount', $_POST['amount']);
-        $p->submit_paypal_postw(); // submit the fields to paypal
+        $p->add_field('return_url', 'booking-confirm.php?success_code=1');
+        $p->add_field('cancel_url', 'booking-failure.php?error_code=25');
+
+        $p->submit_paypal_post(); // submit the fields to paypal
         //$p->dump_fields();      // for debugging, output a table of all the fields
         break;
     case 'success':      // Order was successful...

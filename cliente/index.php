@@ -19,6 +19,7 @@ $bsiCore->wLog('Inicio del paso 1',$bsiCore::INFO,session_id());
     <title><?php echo $bsiCore->config['conf_hotel_name']; ?></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
@@ -54,7 +55,7 @@ $bsiCore->wLog('Inicio del paso 1',$bsiCore::INFO,session_id());
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkin" id="checkin" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="29/07/2015">
+                               aria-owns="birthdate_root">
                         <label for="checkin">
                             <?php echo CHECK_IN_DATE_TEXT; ?>
                         </label>
@@ -63,7 +64,7 @@ $bsiCore->wLog('Inicio del paso 1',$bsiCore::INFO,session_id());
                         <i class="mdi-notification-event-available prefix"></i>
                         <input name="checkout" id="checkout" type="text" class="datepicker picker__input" readonly=""
                                tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false"
-                               aria-owns="birthdate_root" value="31/07/2015">
+                               aria-owns="birthdate_root">
                         <label for="checkout">
                             <?php echo CHECK_OUT_DATE_TEXT; ?>
                         </label>

@@ -5,6 +5,10 @@
 })
 (jQuery);
 
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+});
+
 $(document).ready(function() {
     $('select').material_select();
     $('.slider').slider();

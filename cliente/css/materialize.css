@@ -8131,7 +8131,6 @@ a.waves-effect .waves-ripple {
 
 .modal.modal-fixed-footer .modal-content {
   position: absolute;
-  height: -webkit-calc(100% - 56px);
   height: calc(100% - 56px);
   max-height: 100%;
   width: 100%;
@@ -8591,7 +8590,6 @@ textarea.materialize-textarea + label:after {
 .input-field .prefix ~ textarea {
   margin-left: 3rem;
   width: 92%;
-  width: -webkit-calc(100% - 3rem);
   width: calc(100% - 3rem);
 }
 
@@ -8606,7 +8604,6 @@ textarea.materialize-textarea + label:after {
 @media only screen and (max-width: 992px) {
   .input-field .prefix ~ input {
     width: 86%;
-    width: -webkit-calc(100% - 3rem);
     width: calc(100% - 3rem);
   }
 }
@@ -8614,7 +8611,6 @@ textarea.materialize-textarea + label:after {
 @media only screen and (max-width: 600px) {
   .input-field .prefix ~ input {
     width: 80%;
-    width: -webkit-calc(100% - 3rem);
     width: calc(100% - 3rem);
   }
 }
@@ -8623,7 +8619,6 @@ textarea.materialize-textarea + label:after {
   display: block;
   line-height: inherit;
   padding-left: 4rem;
-  width: -webkit-calc(100% - 4rem);
   width: calc(100% - 4rem);
 }
 
@@ -9403,7 +9398,6 @@ select {
   top: 0;
   margin: 0;
   height: 100%;
-  height: -webkit-calc(100% + 60px);
   height: calc(100% + 60px);
   height: -moz-calc(100%);
   padding-bottom: 60px;

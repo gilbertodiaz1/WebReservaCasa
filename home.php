@@ -165,8 +165,7 @@
                     <i class="medium mdi-action-home"></i>
                     <h5 class="promo-caption">Casa Townhouse</h5>
 
-                    <p>Townhouses de dos pisos con dos cuartos, tres baños, sala, cocina, comedor, lavanderia y
-                        patio.</p>
+                    <p>Townhouses de dos pisos con dos cuartos, tres baños, sala, cocina, comedor y patio.</p>
                 </div>
             </div>
             <div class="col s12 m3">
