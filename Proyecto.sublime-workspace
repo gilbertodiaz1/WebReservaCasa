@@ -212,20 +212,20 @@
 	"buffers":
 	[
 		{
-			"contents": "<!doctype html>\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <title>IUCODING</title>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"stylesheet\" href=\"css/bootstrap.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/bootstrap-responsive.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/datepicker.css\" type=\"text/css\" media=\"screen\"/>\n    <link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"screen\"/>\n    <script type=\"text/javascript\" src=\"js/jquery.min.js\"></script>\n    <script type=\"text/javascript\" src=\"js/bootstrap.min.js\"></script>\n    <script type=\"text/javascript\" src=\"js/bootstrap-datepicker.js\"></script>\n    <script type=\"text/javascript\">\n        $(window).load(function () {\n        });\n    </script>\n</head>\n<body>\n<div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n        <div class=\"span12\">\n            <div id=\"body-div\">\n                <h1>IUCODING</h1>\n                <div class=\"wrapper\">\n                    <div class=\"htitel\">\n                        <h2 class=\"fl\" style=\"border:0; margin:0;\">Falta de reserva</h2>\n                    </div>\n                    <!-- start of search row -->\n                    <div class=\"container-fluid\" style=\"margin:0; padding:0;\">\n                        <div class=\"row-fluid\" style=\"background-color: #faac59; padding: 1% 0\">\n                            <div class=\"span12\" style=\"text-align:center; padding:20px 0\">\n                                <p style=\"color:#C00\">No se pudo enviar notificación por correo electrónico. Póngase en contacto con soporte técnico. </p>\n                                <div style=\"width:100%;\">\n                                    <button id=\"registerButton\" style=\"margin:0 auto\" type=\"button\" onClick=\"window.location.href='index.php'\">Regreso a casa</button>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <!-- end of search row -->\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n</body>\n</html>\n",
+			"file": "/C/Users/Gilberto/Desktop/importante",
 			"settings":
 			{
-				"buffer_size": 2153,
-				"line_ending": "Windows"
+				"buffer_size": 3152,
+				"line_ending": "Windows",
+				"name": "el costo de la limpieza final de la casa de USD $1"
 			}
 		},
 		{
-			"contents": "w3br3s3rv4\nR3S3rV4s*",
+			"file": "/C/xampp/htdocs/PayPal/config.php",
 			"settings":
 			{
-				"buffer_size": 20,
-				"line_ending": "Windows",
-				"name": "w3br3s3rv4"
+				"buffer_size": 639,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -362,6 +362,24 @@
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/PayPal/billing.php",
+		"/C/xampp/htdocs/PayPal/paypalfunctions.php",
+		"/C/xampp/htdocs/PayPal/review.php",
+		"/C/xampp/htdocs/PayPal/order_confirm.php",
+		"/C/xampp/htdocs/PayPal/index.php",
+		"/C/xampp/htdocs/PayPal/expresscheckout.php",
+		"/C/xampp/htdocs/PayPal/3/config.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/paypalfunctions.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/order_confirm.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/expresscheckout.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/index.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/billing.php",
+		"/C/Users/Gilberto/Desktop/PayPal-Express-Checkout-example-master/review.php",
+		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/process.php",
+		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/paypal.class.php",
+		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/config.php",
+		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/index.php",
+		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Gilberto/Desktop/home.php",
 		"/C/Users/Gilberto/Desktop/db.conn.php",
 		"/C/Users/Gilberto/Desktop/conf.class.php",
@@ -373,7 +391,6 @@
 		"/C/Users/Gilberto/Desktop/demo.rent-in-aruba.com-Jul-2015",
 		"/C/xampp/htdocs/PayPal/process.php",
 		"/C/xampp/htdocs/PayPal/paypal.class.php",
-		"/C/xampp/htdocs/PayPal/index.php",
 		"/C/xampp/htdocs/PayPal/config.php",
 		"/C/xampp/htdocs/PayPal/ReadMe.md",
 		"/C/Users/Gilberto/Desktop/base de datos2.sql",
@@ -381,10 +398,6 @@
 		"/C/Users/Gilberto/Downloads/expresscheckout.php",
 		"/C/Users/Gilberto/Downloads/paypalfunctions.php",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/HTMLBeautify.sublime-settings",
-		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/config.php",
-		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/index.php",
-		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/paypal.class.php",
-		"/C/Users/Gilberto/Desktop/Proyecto Web/PayPal PHP/process.php",
 		"/C/Users/Gilberto/Desktop/Log/composer.json",
 		"/C/Users/Gilberto/Desktop/Log/vendor/autoload.php",
 		"/C/Users/Gilberto/Desktop/Log/vendor/composer/autoload_real.php",
@@ -417,7 +430,6 @@
 		"/C/xampp/htdocs/admin/install/install.class.php",
 		"/C/xampp/htdocs/admin/js/hotelvalidation.js",
 		"/C/xampp/htdocs/admin/calendar.php",
-		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/phpcbf.sublime-settings",
 		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/phpcbf/phpcbf.sublime-settings",
@@ -477,19 +489,7 @@
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_prefixer.scss",
 		"/C/xampp/htdocs/WebReservaCasa/css/sass/components/_buttons.scss",
 		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/css/materialize.css",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/js/init.js",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/contact.html",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/css/style.css",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/index.html",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/gallery.html",
-		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/font/flaticon/flaticon.css",
-		"/C/Users/Gilberto/AppData/Roaming/Sublime Text 3/Packages/User/css_style_completions.sublime-settings",
-		"/C/Program Files (x86)/Ampps/www/index.html",
-		"/C/Users/Gilberto/Desktop/MAOR/Proyecto MAOR/Recursos/materialize/css/materialize.css",
-		"/C/Users/Gilberto/Desktop/MAOR/Proyecto MAOR/Recursos/materialize/README.md",
-		"/C/Users/Gilberto/Desktop/pure-release-0.6.0/index.html",
-		"/C/Users/Gilberto/Desktop/andy-master/andy.scss",
-		"/C/Users/Gilberto/Desktop/andy-master/andy.css.map"
+		"/C/Program Files (x86)/Ampps/www/WebReservaCasa/js/init.js"
 	],
 	"find":
 	{
@@ -664,25 +664,26 @@
 			[
 				{
 					"buffer": 0,
+					"file": "/C/Users/Gilberto/Desktop/importante",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2153,
+						"buffer_size": 3152,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1712,
-								1712
+								3152,
+								3152
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"auto_name": "el costo de la limpieza final de la casa de USD $1",
+							"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -693,24 +694,35 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/C/xampp/htdocs/PayPal/config.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20,
+						"buffer_size": 639,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10,
+								0,
 								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "w3br3s3rv4",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

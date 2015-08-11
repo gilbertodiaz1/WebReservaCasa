@@ -53,7 +53,8 @@ class bsiMail
 		$this->emailTo = $emailTo;
 		$this->emailSubject = $emailSubject;
 		$this->emailBody = $emailBody;
-		return (($this->isSMTP == true)? $this->sendPHPMailer() : $this->sendPHPMail());
+		$this->sendPHPMailer();
+		//return (($this->isSMTP == true)? $this->sendPHPMailer() : $this->sendPHPMail());
 	}
 	
 	/* Send Email using PHP Mail Function */	

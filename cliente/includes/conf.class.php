@@ -6,7 +6,7 @@
  * See COPYRIGHT.php for copyright notices and details.
  */
 $bsiCore = new bsiHotelCore;
-define('URL_INDEX', 'http://rent-in-aruba.com/proceso/home.php');
+define('URL_INDEX', 'http://localhost:8080/webreservacasa/home.php');
 class bsiHotelCore
 {
     public $config = array();

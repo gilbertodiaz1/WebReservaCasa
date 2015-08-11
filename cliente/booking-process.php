@@ -86,13 +86,23 @@ function processPayPal()
     global $bsiCore;
 
     $bsiCore->wLog('Comienzo armado de redireccion PayPal',$bsiCore::INFO,session_id());
-    echo "<script language=\"JavaScript\">";
+
+    /*echo "<script language=\"JavaScript\">";
     echo "document.write('<form action=\"paypal.php\" method=\"post\" name=\"formpaypal\">');";
     echo "document.write('<input type=\"hidden\" name=\"amount\"  value=\"" . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2)) . "\">');";
     echo "document.write('<input type=\"hidden\" name=\"invoice\"  value=\"" . $bookprs->bookingId . "\">');";
     echo "document.write('</form>');";
     echo "setTimeout(\"document.formpaypal.submit()\",500);";
+    echo "</script>";*/
+
+    echo "<script language=\"JavaScript\">";
+    echo "document.write('<form action=\"paypal.process.php\" method=\"post\" name=\"formpaypal\">');";
+    //echo "document.write('<input type=\"hidden\" name=\"itemprice\"  value=\"" . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2)) . "\">');";
+    //echo "document.write('<input type=\"hidden\" name=\"itemnumber\"  value=\"" . $bookprs->bookingId . "\">');";
+    echo "document.write('</form>');";
+    echo "setTimeout(\"document.formpaypal.submit()\",500);";
     echo "</script>";
+
     $bsiCore->wLog('Datos que se le envian a PayPal' . '[MONTO A PAGAR]=' . (($bsiCore->config['conf_payment_currency'] == '1') ? $bsiCore->getExchangemoney($bookprs->totalPaymentAmount, $_SESSION['sv_currency']) : number_format($bookprs->totalPaymentAmount, 2) . '[MONTO A PAGAR]=' . $bookprs->bookingId),$bsiCore::INFO,session_id());
 }
 

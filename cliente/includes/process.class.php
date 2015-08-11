@@ -35,6 +35,8 @@ class BookingProcess
 	public $paymentGatewayCode	= '';		
 	public $totalPaymentAmount 	= 0.00;	
 	public $invoiceHtml			= '';
+	public $description			= '';
+	public $itemName			= '';
 	
 	function BookingProcess() {				
 		$this->setMyRequestParams();
@@ -84,7 +86,9 @@ class BookingProcess
 		$this->clientEmail		= $this->clientdata['email'];
 		$this->noOfRooms		= count(explode(",", $this->roomIdsOnly));
 		$this->taxWithPrice     = $bsiCore->config['conf_price_with_tax'];
-			
+		$this->description		= $this->noOfNights . ' Noches desde el' . $this->checkInDate . ' hasta el ' . $this->checkOutDate;
+		$this->itemName			= 'Reservación Casa Gold Coast Condo';
+
 		if($bsiCore->config['conf_enabled_deposit'])
 			$this->depositenabled = true;			
 		

@@ -4,7 +4,7 @@ include("header.php");
 include("includes/conf.class.php");
 ?>    
  <link rel="stylesheet" type="text/css" href="css/jquery.validate.css" />
- <script type="text/javascript" src="../js//dtpicker/jquery.ui.datepicker-<?=$langauge_selcted?>.js"></script>
+ <script type="text/javascript" src="js/dtpicker/jquery.ui.datepicker-<?=$langauge_selcted?>.js"></script>
   
  <script type="text/javascript">
 	$(document).ready(function(){
