@@ -212,19 +212,22 @@
 	"buffers":
 	[
 		{
+			"contents": "el costo de la limpieza final de la casa de USD $125 y el depósito de USD $400 se recibira en efectivo a la hora de entrega\n\n\nSuccess\n\nYour Transaction ID : 21712419MR355463B\nPayment Received! Your product will be sent to you very soon!\n\nStuff to store in database :\nArray\n(\n    [TOKEN] => EC%2d1FY41669S7850794L\n    [BILLINGAGREEMENTACCEPTEDSTATUS] => 0\n    [CHECKOUTSTATUS] => PaymentActionCompleted\n    [TIMESTAMP] => 2015%2d08%2d09T18%3a50%3a43Z\n    [CORRELATIONID] => 5d5234386b322\n    [ACK] => Success\n    [VERSION] => 109%2e0\n    [BUILD] => 000000\n    [EMAIL] => gilbertodiazCliente%40outlook%2ecom\n    [PAYERID] => S2QPTY6U4WJE6\n    [PAYERSTATUS] => verified\n    [FIRSTNAME] => Jose%20Gilberto\n    [LASTNAME] => Pinto\n    [COUNTRYCODE] => US\n    [SHIPTONAME] => Jose%20Gilberto%20Pinto\n    [SHIPTOSTREET] => 1%20Main%20St\n    [SHIPTOCITY] => San%20Jose\n    [SHIPTOSTATE] => CA\n    [SHIPTOZIP] => 95131\n    [SHIPTOCOUNTRYCODE] => US\n    [SHIPTOCOUNTRYNAME] => United%20States\n    [ADDRESSSTATUS] => Confirmed\n    [CURRENCYCODE] => USD\n    [AMT] => 3500%2e00\n    [ITEMAMT] => 3500%2e00\n    [SHIPPINGAMT] => 0%2e00\n    [HANDLINGAMT] => 0%2e00\n    [TAXAMT] => 0%2e00\n    [INSURANCEAMT] => 0%2e00\n    [SHIPDISCAMT] => 0%2e00\n    [L_NAME0] => AlienWare\n    [L_NUMBER0] => 10000\n    [L_QTY0] => 1\n    [L_TAXAMT0] => 0%2e00\n    [L_AMT0] => 3500%2e00\n    [L_DESC0] => Lorem%20ipsum%20dolor%20sit%20amet%2e\n    [L_ITEMWEIGHTVALUE0] => %20%20%200%2e00000\n    [L_ITEMLENGTHVALUE0] => %20%20%200%2e00000\n    [L_ITEMWIDTHVALUE0] => %20%20%200%2e00000\n    [L_ITEMHEIGHTVALUE0] => %20%20%200%2e00000\n    [PAYMENTREQUEST_0_CURRENCYCODE] => USD\n    [PAYMENTREQUEST_0_AMT] => 3500%2e00\n    [PAYMENTREQUEST_0_ITEMAMT] => 3500%2e00\n    [PAYMENTREQUEST_0_SHIPPINGAMT] => 0%2e00\n    [PAYMENTREQUEST_0_HANDLINGAMT] => 0%2e00\n    [PAYMENTREQUEST_0_TAXAMT] => 0%2e00\n    [PAYMENTREQUEST_0_INSURANCEAMT] => 0%2e00\n    [PAYMENTREQUEST_0_SHIPDISCAMT] => 0%2e00\n    [PAYMENTREQUEST_0_TRANSACTIONID] => 21712419MR355463B\n    [PAYMENTREQUEST_0_INSURANCEOPTIONOFFERED] => false\n    [PAYMENTREQUEST_0_SHIPTONAME] => Jose%20Gilberto%20Pinto\n    [PAYMENTREQUEST_0_SHIPTOSTREET] => 1%20Main%20St\n    [PAYMENTREQUEST_0_SHIPTOCITY] => San%20Jose\n    [PAYMENTREQUEST_0_SHIPTOSTATE] => CA\n    [PAYMENTREQUEST_0_SHIPTOZIP] => 95131\n    [PAYMENTREQUEST_0_SHIPTOCOUNTRYCODE] => US\n    [PAYMENTREQUEST_0_SHIPTOCOUNTRYNAME] => United%20States\n    [PAYMENTREQUEST_0_ADDRESSSTATUS] => Confirmed\n    [PAYMENTREQUEST_0_ADDRESSNORMALIZATIONSTATUS] => None\n    [L_PAYMENTREQUEST_0_NAME0] => AlienWare\n    [L_PAYMENTREQUEST_0_NUMBER0] => 10000\n    [L_PAYMENTREQUEST_0_QTY0] => 1\n    [L_PAYMENTREQUEST_0_TAXAMT0] => 0%2e00\n    [L_PAYMENTREQUEST_0_AMT0] => 3500%2e00\n    [L_PAYMENTREQUEST_0_DESC0] => Lorem%20ipsum%20dolor%20sit%20amet%2e\n    [L_PAYMENTREQUEST_0_ITEMWEIGHTVALUE0] => %20%20%200%2e00000\n    [L_PAYMENTREQUEST_0_ITEMLENGTHVALUE0] => %20%20%200%2e00000\n    [L_PAYMENTREQUEST_0_ITEMWIDTHVALUE0] => %20%20%200%2e00000\n    [L_PAYMENTREQUEST_0_ITEMHEIGHTVALUE0] => %20%20%200%2e00000\n    [PAYMENTREQUESTINFO_0_TRANSACTIONID] => 21712419MR355463B\n    [PAYMENTREQUESTINFO_0_ERRORCODE] => 0\n)\n\necho '<h2>Success</h2>';\n        echo 'Your Transaction ID : ' . urldecode($httpParsedResponseAr[\"PAYMENTINFO_0_TRANSACTIONID\"]);\n\n        /*\n            #### SAVE BUYER INFORMATION IN DATABASE ###\n            //see (http://www.sanwebe.com/2013/03/basic-php-mysqli-usage) for mysqli usage\n\n            $buyerName = $httpParsedResponseAr[\"FIRSTNAME\"].' '.$httpParsedResponseAr[\"LASTNAME\"];\n            $buyerEmail = $httpParsedResponseAr[\"EMAIL\"];\n\n            //Open a new connection to the MySQL server\n            $mysqli = new mysqli('host','username','password','database_name');\n\n            //Output any connection error\n            if ($mysqli->connect_error) {\n                die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);\n            }\n\n            $insert_row = $mysqli->query(\"INSERT INTO BuyerTable\n            (BuyerName,BuyerEmail,TransactionID,ItemName,ItemNumber, ItemAmount,ItemQTY)\n            VALUES ('$buyerName','$buyerEmail','$transactionID','$ItemName',$ItemNumber, $ItemTotalPrice,$ItemQTY)\");\n\n            if($insert_row){\n                print 'Success! ID of last inserted record is : ' .$mysqli->insert_id .'<br />';\n            }else{\n                die('Error : ('. $mysqli->errno .') '. $mysqli->error);\n            }\n                 */\n",
 			"file": "/C/Users/Gilberto/Desktop/importante",
+			"file_size": 3235,
+			"file_write_time": 130836866137460625,
 			"settings":
 			{
-				"buffer_size": 3152,
+				"buffer_size": 4450,
 				"line_ending": "Windows",
 				"name": "el costo de la limpieza final de la casa de USD $1"
 			}
 		},
 		{
-			"file": "/C/xampp/htdocs/PayPal/config.php",
+			"contents": "<?php\nsession_start();\ninclude_once(\"config.php\");\ninclude_once(\"paypal.class.php\");\n\n$paypalmode = ($PayPalMode=='sandbox') ? '.sandbox' : '';\n\nif($_POST) //Post Data received from product list page.\n{\n    //Mainly we need 4 variables from product page Item Name, Item Price, Item Number and Item Quantity.\n    \n    //Please Note : People can manipulate hidden field amounts in form,\n    //In practical world you must fetch actual price from database using item id. Eg: \n    //$ItemPrice = $mysqli->query(\"SELECT item_price FROM products WHERE id = Product_Number\");\n\n    $ItemName       = $_POST[\"itemname\"]; //Item Name\n    $ItemPrice      = $_POST[\"itemprice\"]; //Item Price\n    $ItemNumber     = $_POST[\"itemnumber\"]; //Item Number\n    $ItemDesc       = $_POST[\"itemdesc\"]; //Item description\n    $ItemQty        = $_POST[\"itemQty\"]; // Item Quantity\n    $ItemTotalPrice = ($ItemPrice*$ItemQty); //(Item Price x Quantity = Total) Get total amount of product; \n    \n    //Other important variables like tax, shipping cost\n    $TotalTaxAmount     = 2.58;  //Sum of tax for all items in this order. \n    $HandalingCost      = 2.00;  //Handling cost for this order.\n    $InsuranceCost      = 1.00;  //shipping insurance cost for this order.\n    $ShippinDiscount    = -3.00; //Shipping discount for this order. Specify this as negative number.\n    $ShippinCost        = 3.00; //Although you may change the value later, try to pass in a shipping amount that is reasonably accurate.\n    \n    //Grand total including all tax, insurance, shipping cost and discount\n    $GrandTotal = ($ItemTotalPrice + $TotalTaxAmount + $HandalingCost + $InsuranceCost + $ShippinCost + $ShippinDiscount);\n    \n    //Parameters for SetExpressCheckout, which will be sent to PayPal\n    $padata =   '&METHOD=SetExpressCheckout'.\n                '&RETURNURL='.urlencode($PayPalReturnURL ).\n                '&CANCELURL='.urlencode($PayPalCancelURL).\n                '&PAYMENTREQUEST_0_PAYMENTACTION='.urlencode(\"SALE\").\n                \n                '&L_PAYMENTREQUEST_0_NAME0='.urlencode($ItemName).\n                '&L_PAYMENTREQUEST_0_NUMBER0='.urlencode($ItemNumber).\n                '&L_PAYMENTREQUEST_0_DESC0='.urlencode($ItemDesc).\n                '&L_PAYMENTREQUEST_0_AMT0='.urlencode($ItemPrice).\n                '&L_PAYMENTREQUEST_0_QTY0='. urlencode($ItemQty).\n                \n                /* \n                //Additional products (L_PAYMENTREQUEST_0_NAME0 becomes L_PAYMENTREQUEST_0_NAME1 and so on)\n                '&L_PAYMENTREQUEST_0_NAME1='.urlencode($ItemName2).\n                '&L_PAYMENTREQUEST_0_NUMBER1='.urlencode($ItemNumber2).\n                '&L_PAYMENTREQUEST_0_DESC1='.urlencode($ItemDesc2).\n                '&L_PAYMENTREQUEST_0_AMT1='.urlencode($ItemPrice2).\n                '&L_PAYMENTREQUEST_0_QTY1='. urlencode($ItemQty2).\n                */\n                \n                /* \n                //Override the buyer's shipping address stored on PayPal, The buyer cannot edit the overridden address.\n                '&ADDROVERRIDE=1'.\n                '&PAYMENTREQUEST_0_SHIPTONAME=J Smith'.\n                '&PAYMENTREQUEST_0_SHIPTOSTREET=1 Main St'.\n                '&PAYMENTREQUEST_0_SHIPTOCITY=San Jose'.\n                '&PAYMENTREQUEST_0_SHIPTOSTATE=CA'.\n                '&PAYMENTREQUEST_0_SHIPTOCOUNTRYCODE=US'.\n                '&PAYMENTREQUEST_0_SHIPTOZIP=95131'.\n                '&PAYMENTREQUEST_0_SHIPTOPHONENUM=408-967-4444'.\n                */\n                \n                '&NOSHIPPING=0'. //set 1 to hide buyer's shipping address, in-case products that do not require shipping\n                \n                '&PAYMENTREQUEST_0_ITEMAMT='.urlencode($ItemTotalPrice).\n                '&PAYMENTREQUEST_0_TAXAMT='.urlencode($TotalTaxAmount).\n                '&PAYMENTREQUEST_0_SHIPPINGAMT='.urlencode($ShippinCost).\n                '&PAYMENTREQUEST_0_HANDLINGAMT='.urlencode($HandalingCost).\n                '&PAYMENTREQUEST_0_SHIPDISCAMT='.urlencode($ShippinDiscount).\n                '&PAYMENTREQUEST_0_INSURANCEAMT='.urlencode($InsuranceCost).\n                '&PAYMENTREQUEST_0_AMT='.urlencode($GrandTotal).\n                '&PAYMENTREQUEST_0_CURRENCYCODE='.urlencode($PayPalCurrencyCode).\n                '&LOCALECODE=GB'. //PayPal pages to match the language on your website.\n                '&LOGOIMG=http://www.sanwebe.com/wp-content/themes/sanwebe/img/logo.png'. //site logo\n                '&CARTBORDERCOLOR=FFFFFF'. //border color of cart\n                '&ALLOWNOTE=1';\n                \n                ############# set session variable we need later for \"DoExpressCheckoutPayment\" #######\n                $_SESSION['ItemName']           =  $ItemName; //Item Name\n                $_SESSION['ItemPrice']          =  $ItemPrice; //Item Price\n                $_SESSION['ItemNumber']         =  $ItemNumber; //Item Number\n                $_SESSION['ItemDesc']           =  $ItemDesc; //Item description\n                $_SESSION['ItemQty']            =  $ItemQty; // Item Quantity\n                $_SESSION['ItemTotalPrice']     =  $ItemTotalPrice; //total amount of product; \n                $_SESSION['TotalTaxAmount']     =  $TotalTaxAmount;  //Sum of tax for all items in this order. \n                $_SESSION['HandalingCost']      =  $HandalingCost;  //Handling cost for this order.\n                $_SESSION['InsuranceCost']      =  $InsuranceCost;  //shipping insurance cost for this order.\n                $_SESSION['ShippinDiscount']    =  $ShippinDiscount; //Shipping discount for this order. Specify this as negative number.\n                $_SESSION['ShippinCost']        =   $ShippinCost; //Although you may change the value later, try to pass in a shipping amount that is reasonably accurate.\n                $_SESSION['GrandTotal']         =  $GrandTotal;\n\n\n        //We need to execute the \"SetExpressCheckOut\" method to obtain paypal token\n        $paypal= new MyPayPal();\n        $httpParsedResponseAr = $paypal->PPHttpPost('SetExpressCheckout', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);\n        \n        //Respond according to message we receive from Paypal\n        if(\"SUCCESS\" == strtoupper($httpParsedResponseAr[\"ACK\"]) || \"SUCCESSWITHWARNING\" == strtoupper($httpParsedResponseAr[\"ACK\"]))\n        {\n\n                //Redirect user to PayPal store with Token received.\n                $paypalurl ='https://www'.$paypalmode.'.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token='.$httpParsedResponseAr[\"TOKEN\"].'';\n                header('Location: '.$paypalurl);\n             \n        }else{\n            //Show error message\n            echo '<div style=\"color:red\"><b>Error : </b>'.urldecode($httpParsedResponseAr[\"L_LONGMESSAGE0\"]).'</div>';\n            echo '<pre>';\n            print_r($httpParsedResponseAr);\n            echo '</pre>';\n        }\n\n}\n\n//Paypal redirects back to this page using ReturnURL, We should receive TOKEN and Payer ID\nif(isset($_GET[\"token\"]) && isset($_GET[\"PayerID\"]))\n{\n    //we will be using these two variables to execute the \"DoExpressCheckoutPayment\"\n    //Note: we haven't received any payment yet.\n    \n    $token = $_GET[\"token\"];\n    $payer_id = $_GET[\"PayerID\"];\n    \n    //get session variables\n    $ItemName           = $_SESSION['ItemName']; //Item Name\n    $ItemPrice          = $_SESSION['ItemPrice'] ; //Item Price\n    $ItemNumber         = $_SESSION['ItemNumber']; //Item Number\n    $ItemDesc           = $_SESSION['ItemDesc']; //Item Number\n    $ItemQty            = $_SESSION['ItemQty']; // Item Quantity\n    $ItemTotalPrice     = $_SESSION['ItemTotalPrice']; //total amount of product; \n    $TotalTaxAmount     = $_SESSION['TotalTaxAmount'] ;  //Sum of tax for all items in this order. \n    $HandalingCost      = $_SESSION['HandalingCost'];  //Handling cost for this order.\n    $InsuranceCost      = $_SESSION['InsuranceCost'];  //shipping insurance cost for this order.\n    $ShippinDiscount    = $_SESSION['ShippinDiscount']; //Shipping discount for this order. Specify this as negative number.\n    $ShippinCost        = $_SESSION['ShippinCost']; //Although you may change the value later, try to pass in a shipping amount that is reasonably accurate.\n    $GrandTotal         = $_SESSION['GrandTotal'];\n\n    $padata =   '&TOKEN='.urlencode($token).\n                '&PAYERID='.urlencode($payer_id).\n                '&PAYMENTREQUEST_0_PAYMENTACTION='.urlencode(\"SALE\").\n                \n                //set item info here, otherwise we won't see product details later  \n                '&L_PAYMENTREQUEST_0_NAME0='.urlencode($ItemName).\n                '&L_PAYMENTREQUEST_0_NUMBER0='.urlencode($ItemNumber).\n                '&L_PAYMENTREQUEST_0_DESC0='.urlencode($ItemDesc).\n                '&L_PAYMENTREQUEST_0_AMT0='.urlencode($ItemPrice).\n                '&L_PAYMENTREQUEST_0_QTY0='. urlencode($ItemQty).\n\n                /* \n                //Additional products (L_PAYMENTREQUEST_0_NAME0 becomes L_PAYMENTREQUEST_0_NAME1 and so on)\n                '&L_PAYMENTREQUEST_0_NAME1='.urlencode($ItemName2).\n                '&L_PAYMENTREQUEST_0_NUMBER1='.urlencode($ItemNumber2).\n                '&L_PAYMENTREQUEST_0_DESC1=Description text'.\n                '&L_PAYMENTREQUEST_0_AMT1='.urlencode($ItemPrice2).\n                '&L_PAYMENTREQUEST_0_QTY1='. urlencode($ItemQty2).\n                */\n\n                '&PAYMENTREQUEST_0_ITEMAMT='.urlencode($ItemTotalPrice).\n                '&PAYMENTREQUEST_0_TAXAMT='.urlencode($TotalTaxAmount).\n                '&PAYMENTREQUEST_0_SHIPPINGAMT='.urlencode($ShippinCost).\n                '&PAYMENTREQUEST_0_HANDLINGAMT='.urlencode($HandalingCost).\n                '&PAYMENTREQUEST_0_SHIPDISCAMT='.urlencode($ShippinDiscount).\n                '&PAYMENTREQUEST_0_INSURANCEAMT='.urlencode($InsuranceCost).\n                '&PAYMENTREQUEST_0_AMT='.urlencode($GrandTotal).\n                '&PAYMENTREQUEST_0_CURRENCYCODE='.urlencode($PayPalCurrencyCode);\n    \n    //We need to execute the \"DoExpressCheckoutPayment\" at this point to Receive payment from user.\n    $paypal= new MyPayPal();\n    $httpParsedResponseAr = $paypal->PPHttpPost('DoExpressCheckoutPayment', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);\n    \n    //Check if everything went ok..\n    if(\"SUCCESS\" == strtoupper($httpParsedResponseAr[\"ACK\"]) || \"SUCCESSWITHWARNING\" == strtoupper($httpParsedResponseAr[\"ACK\"])) \n    {\n\n            echo '<h2>Success</h2>';\n            echo 'Your Transaction ID : '.urldecode($httpParsedResponseAr[\"PAYMENTINFO_0_TRANSACTIONID\"]);\n            \n                /*\n                //Sometimes Payment are kept pending even when transaction is complete. \n                //hence we need to notify user about it and ask him manually approve the transiction\n                */\n                \n                if('Completed' == $httpParsedResponseAr[\"PAYMENTINFO_0_PAYMENTSTATUS\"])\n                {\n                    echo '<div style=\"color:green\">Payment Received! Your product will be sent to you very soon!</div>';\n                }\n                elseif('Pending' == $httpParsedResponseAr[\"PAYMENTINFO_0_PAYMENTSTATUS\"])\n                {\n                    echo '<div style=\"color:red\">Transaction Complete, but payment is still pending! '.\n                    'You need to manually authorize this payment in your <a target=\"_new\" href=\"http://www.paypal.com\">Paypal Account</a></div>';\n                }\n\n                // we can retrive transection details using either GetTransactionDetails or GetExpressCheckoutDetails\n                // GetTransactionDetails requires a Transaction ID, and GetExpressCheckoutDetails requires Token returned by SetExpressCheckOut\n                $padata =   '&TOKEN='.urlencode($token);\n                $paypal= new MyPayPal();\n                $httpParsedResponseAr = $paypal->PPHttpPost('GetExpressCheckoutDetails', $padata, $PayPalApiUsername, $PayPalApiPassword, $PayPalApiSignature, $PayPalMode);\n\n                if(\"SUCCESS\" == strtoupper($httpParsedResponseAr[\"ACK\"]) || \"SUCCESSWITHWARNING\" == strtoupper($httpParsedResponseAr[\"ACK\"])) \n                {\n                    \n                    echo '<br /><b>Stuff to store in database :</b><br /><pre>';\n                    /*\n                    #### SAVE BUYER INFORMATION IN DATABASE ###\n                    //see (http://www.sanwebe.com/2013/03/basic-php-mysqli-usage) for mysqli usage\n                    \n                    $buyerName = $httpParsedResponseAr[\"FIRSTNAME\"].' '.$httpParsedResponseAr[\"LASTNAME\"];\n                    $buyerEmail = $httpParsedResponseAr[\"EMAIL\"];\n                    \n                    //Open a new connection to the MySQL server\n                    $mysqli = new mysqli('host','username','password','database_name');\n                    \n                    //Output any connection error\n                    if ($mysqli->connect_error) {\n                        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);\n                    }       \n                    \n                    $insert_row = $mysqli->query(\"INSERT INTO BuyerTable \n                    (BuyerName,BuyerEmail,TransactionID,ItemName,ItemNumber, ItemAmount,ItemQTY)\n                    VALUES ('$buyerName','$buyerEmail','$transactionID','$ItemName',$ItemNumber, $ItemTotalPrice,$ItemQTY)\");\n                    \n                    if($insert_row){\n                        print 'Success! ID of last inserted record is : ' .$mysqli->insert_id .'<br />'; \n                    }else{\n                        die('Error : ('. $mysqli->errno .') '. $mysqli->error);\n                    }\n                    \n                    */\n                    \n                    echo '<pre>';\n                    print_r($httpParsedResponseAr);\n                    echo '</pre>';\n                } else  {\n                    echo '<div style=\"color:red\"><b>GetTransactionDetails failed:</b>'.urldecode($httpParsedResponseAr[\"L_LONGMESSAGE0\"]).'</div>';\n                    echo '<pre>';\n                    print_r($httpParsedResponseAr);\n                    echo '</pre>';\n\n                }\n    \n    }else{\n            echo '<div style=\"color:red\"><b>Error : </b>'.urldecode($httpParsedResponseAr[\"L_LONGMESSAGE0\"]).'</div>';\n            echo '<pre>';\n            print_r($httpParsedResponseAr);\n            echo '</pre>';\n    }\n}\n?>",
 			"settings":
 			{
-				"buffer_size": 639,
+				"buffer_size": 14391,
 				"line_ending": "Windows"
 			}
 		}
@@ -362,6 +365,7 @@
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/PayPal/config.php",
 		"/C/xampp/htdocs/PayPal/billing.php",
 		"/C/xampp/htdocs/PayPal/paypalfunctions.php",
 		"/C/xampp/htdocs/PayPal/review.php",
@@ -391,7 +395,6 @@
 		"/C/Users/Gilberto/Desktop/demo.rent-in-aruba.com-Jul-2015",
 		"/C/xampp/htdocs/PayPal/process.php",
 		"/C/xampp/htdocs/PayPal/paypal.class.php",
-		"/C/xampp/htdocs/PayPal/config.php",
 		"/C/xampp/htdocs/PayPal/ReadMe.md",
 		"/C/Users/Gilberto/Desktop/base de datos2.sql",
 		"/C/Users/Gilberto/Desktop/base de datos.sql",
@@ -668,15 +671,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3152,
+						"buffer_size": 4450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3152,
-								3152
+								4450,
+								4450
 							]
 						],
 						"settings":
@@ -686,7 +689,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2024.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -694,38 +697,29 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/C/xampp/htdocs/PayPal/config.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 639,
+						"buffer_size": 14391,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								13692,
+								12259
 							]
 						],
 						"settings":
 						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5196.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b83141df-6a3a-496e-a594-738a92ec8d6c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\WebReservaCasa\cliente\paypal.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proyecto.sublime-workspace" afterPath="$PROJECT_DIR$/Proyecto.sublime-workspace" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/booking-process.php" afterPath="$PROJECT_DIR$/cliente/booking-process.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/includes/conf.class.php" afterPath="$PROJECT_DIR$/cliente/includes/conf.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/includes/db.conn.php" afterPath="$PROJECT_DIR$/admin/includes/db.conn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/includes/db.conn.php" afterPath="$PROJECT_DIR$/cliente/includes/db.conn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/includes/mail.class.php" afterPath="$PROJECT_DIR$/cliente/includes/mail.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/paypal.class.php" afterPath="$PROJECT_DIR$/cliente/paypal.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cliente/includes/process.class.php" afterPath="$PROJECT_DIR$/cliente/includes/process.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/view_bookings.php" afterPath="$PROJECT_DIR$/admin/view_bookings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebReservaCasa.iws" />
@@ -484,14 +474,22 @@
       <option name="number" value="Default" />
       <updated>1430510242879</updated>
     </task>
+    <task id="LOCAL-00001" summary="cambios de version de paypal listo para pruebas">
+      <created>1439321435497</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1439321435497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15831557" sideWeight="0.495671" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -521,6 +519,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cambios de version de paypal listo para pruebas" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios de version de paypal listo para pruebas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -812,6 +814,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -819,6 +822,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15614237">
           <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
